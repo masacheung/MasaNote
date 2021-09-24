@@ -1,4 +1,4 @@
-<a href="https://masanote.herokuapp.com/">Live Demo</>
+<a href="https://masanote.herokuapp.com/">Live Demo
 
 # README
 
