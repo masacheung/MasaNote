@@ -23,3 +23,23 @@ const clearErrors = () => ({
     type: CLEAR_SESSION_ERRORS
 })
 
+export const createUser = user => dispatch => {
+    return SessionApiUtil.createUser(user)
+        .then(user => dispatch(receiveCurrentUser(user))),
+        err => dispatch(receiveErrors(err.responseJSON))
+}
+
+export const loginUser = user => dispatch => {
+    return SessionApiUtil.loginUser(user)
+        .then(user => dispatch(receiveCurrentUser(user))),
+        err => dispatch(receiveErrors(Err.responseJSON))
+}
+
+export const logoutUser = () => dispatch => {
+    return SessionApiUtil.logoutUser()
+        .then(user => dispatch(logoutCurrentUser()))
+}
+
+export const clearSessionErrors = () => dispatch => {
+    return dispatch(clearErrors())
+}
