@@ -1,13 +1,12 @@
 import React from "react";
 import { Redirect } from "react-router";
 
-export default class SessionForm extends React.Component{
+class SessionForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             username: "",
             password: "",
-            redirect: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
@@ -22,7 +21,7 @@ export default class SessionForm extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.action(user)
+        this.props.processForm(user)
             .then(() => this.props.history.push('/notes'));
     }
 
@@ -40,6 +39,7 @@ export default class SessionForm extends React.Component{
     render() {
         return (
             <div>
+                Helo 
                 <form className="session-form" onSubmit={this.handleSubmit}>
                     <ul>
                         <li>
@@ -63,9 +63,16 @@ export default class SessionForm extends React.Component{
                                     />
                         </li>
                     </ul>
+                    <div>
+                        <div>{this.props.navText}</div>
+                        <div>{this.props.nvaLink}</div>
+                        <dib><a onClick={this.handleDemo}>Login with Demo User</a></dib>
+                    </div>
                 </form>
             </div>
         )
     }
 
 }
+
+export default SessionForm;

@@ -2,18 +2,20 @@ import { connect } from "react-redux";
 import React from "react";
 import { Link } from "react-router-dom";
 import { clearSessionErrors, loginUser} from "../../actions/session_actions";
+import SessionForm from "./session_form";
 
-const mSTP = ({ errors }) => {
+const mSTP = ({ state }) => {
     return {
-        errors: errors.session,
+        errors: Object.values(state.errors.session),
         formType: 'login',
+        navText: "Do not have an account?",
         navLink: <Link to="/signup">Create Account</Link>
     }
 }
 
 const mDTP = dispatch => {
     return {
-        action: (user) => dispatch(loginUser(user)),
+        processForm: (user) => dispatch(loginUser(user)),
         clearSessionErrors: () => dispatch(clearSessionErrors())
     }
 }
