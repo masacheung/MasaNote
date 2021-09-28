@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch} from "react-router-dom";
-import LoginFormContainer from "./session/login_form_container";
-import SignupFormContainer from "./session/signup_form_container";
+import LoginFormContainer from "./user_auth/login_form_container";
+import SignupFormContainer from "./user_auth/signup_form_container";
 
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
