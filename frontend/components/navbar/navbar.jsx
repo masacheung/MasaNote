@@ -7,10 +7,10 @@ const Navbar = () => {
         <header>
             <div className="navbar">
                 <Link to="/" className="logo-navbar">
-                    <img src={window.logo} className="logo"/>
+                    <img src={window.logo} className="logo-nav"/>
                     <p>MasaNote</p>
                 </Link>
-                <ul>
+                <ul className="ul-nav">
                     <li>
                         <a href="https://github.com/masacheung">Github</a>
                     </li>

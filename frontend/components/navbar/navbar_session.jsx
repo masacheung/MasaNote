@@ -9,7 +9,7 @@ const NavBarSession = ({ currentUser, logout }) => {
     );
 
     const greetingOrLogout = () => {
-        <nav>
+        <nav className="session-nav">
             <h2>Hello {currentUser.uesrname}</h2>
             <Link to="/" onClick={logout}>Log out</Link>
         </nav>
