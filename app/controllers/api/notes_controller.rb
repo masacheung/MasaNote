@@ -8,6 +8,7 @@ class Api::NotesController < ApplicationController
 
     def show
         @note = Note.find(params[:id])
+        render :show
     end
 
     def create

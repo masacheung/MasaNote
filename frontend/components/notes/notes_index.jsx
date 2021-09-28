@@ -5,10 +5,6 @@ export default class NotesIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchNotes();
-    }
-
     render() {
         return (
             <div>
