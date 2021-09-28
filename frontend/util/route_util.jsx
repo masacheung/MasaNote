@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import { Route, Redirect, Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
-const Auth = ({ component: Component, path, loggedIn, exact}) => {
-    <Route path={path} exact={exact} render={(props) => !loggedIn ? <Component {...props} /> : <Redirect to ="/notes"/>} />
-}
+const Auth = ({ path, loggedIn, component: Component}) => (
+    <Route path={path} render={(props) => (!loggedIn ? <Component {...props} /> : <Redirect to ="/notes"/>)} />
+)
 
-const Protected = ({ component: Component, path, loggedIn, exact}) => (
-    <Route path={path} exact={exact} render={(props) => loggedIn ? <Component {...props} /> : <Redirect to ="/"/>} />
+const Protected = ({ path, loggedIn, component: Component}) => (
+    <Route path={path} render={(props) => (loggedIn ? <Component {...props} /> : <Redirect to ="/"/>)} />
 )
 
 const mSTP = state => {
     return {
-        loggedIn: Boolean(state.session.id)
+        loggedIn: Boolean(state.session.currentUser)
     }
 }
 
