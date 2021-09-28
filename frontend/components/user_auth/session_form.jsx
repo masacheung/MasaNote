@@ -11,7 +11,6 @@ export default class SessionForm extends React.Component {
             redirectToHome: false 
         };
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleDemo = this.handleDemo.bind(this)
     }
 
     update(field) {
@@ -21,7 +20,6 @@ export default class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.processForm(this.state)
-            .then(() => this.props.history.push('/notes'));
     }
 
     handleDemo(e) {
@@ -29,7 +27,6 @@ export default class SessionForm extends React.Component {
             username: "demo",
             password: "password"
         })
-        .then(() => this.props.history.push('/notes'));
     }
     
     renderErrors() {
@@ -83,12 +80,13 @@ export default class SessionForm extends React.Component {
                                 </li>
 
                             </ul>
+                        </form>
                             <div className="context-switch">
                                 <div>{this.props.navText}</div>
                                 <div className="switch">{this.props.navLink}</div>
-                                <div className="switch"><a onClick={this.handleDemo}>Log in with Demo user</a></div>
+                                <div className="switch"><a onClick={() => this.handleDemo()}>Log in with Demo user</a></div>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             </div>
