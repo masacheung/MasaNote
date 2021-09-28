@@ -13,7 +13,7 @@ const Protected = ({ path, loggedIn, component: Component}) => (
 
 const mSTP = state => {
     return {
-        loggedIn: Boolean(state.session.currentUser)
+        loggedIn: Boolean(state.session.id)
     }
 }
 
