@@ -1,0 +1,15 @@
+.splash-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.splash-footer > .splash-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.splash-info a{
+    border-bottom: dotted 1px;
+}
