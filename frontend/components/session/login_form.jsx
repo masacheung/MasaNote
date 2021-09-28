@@ -7,12 +7,21 @@ class LogInForm extends React.Component {
         super(props);
         this.state = this.props.userForm;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state)
             .then(this.props.history.push("/notes"))
+    }
+
+    handleDemo(e) {
+        this.props.processForm({
+            username: "demo",
+            password: "demo"
+        })
+        .then(() => this.props.history.push('/notes'));
     }
 
     update(field) {
@@ -31,7 +40,7 @@ class LogInForm extends React.Component {
                     <input placeholder="Username" onChange={this.update("username")} type="text" value={this.state.username}/>
                     <input placeholder="Password" onChange={this.update("password")} type="password" value={this.state.password}/>
                     <button>Log In</button>
-                    <button onClick={() => this.props.history.push("/demo")}>Demo</button>
+                    <button onClick={this.handleDemo}>Demo</button>
                     <Link to="/signup">Sign Up</Link>
                 </form>
             </div>

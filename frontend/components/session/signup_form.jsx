@@ -11,12 +11,21 @@ class SignUpForm extends React.Component {
             username: ""
         };
         this.handleSubmite = this.handleSubmite.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     handleSubmite(e) {
         e.preventDefault();
         this.props.createUser(this.state)
             .then(() => this.props.history.push("/notes"))
+    }
+
+    handleDemo(e) {
+        this.props.processForm({
+            username: "demo",
+            password: "demo"
+        })
+        .then(() => this.props.history.push('/notes'));
     }
 
     componentWillUnmount() {
@@ -36,7 +45,7 @@ class SignUpForm extends React.Component {
                     <input placeholder="Username" onChange={this.update('username')} type="text" value={this.state.username} />
                     <input placeholder="Password" onChange={this.update('password')} type="password" value={this.state.password} />
                     <button>Sign Up</button>
-                    <button onClick={() => this.props.history.push("demo")}>Demo</button>
+                    <button onClick={this.handleDemo}>Demo</button>
                     <Link to="/login">Log In</Link>
                 </form>
             </div>
