@@ -4,7 +4,7 @@ const Splash = () => {
     return (
         <div className="splash">
             <div className="splash-slogan">
-                Spash Page
+                Splash Page
             </div>
             <hr/>
             <div className="splash-footer">
