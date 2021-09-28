@@ -6,6 +6,7 @@ const Splash = () => {
             <div>
                 Spash Page
             </div>
+            <hr/>
             <div className="splash-footer">
                 <div className="splash-info">
                     <h3>

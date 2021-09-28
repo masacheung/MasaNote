@@ -1,5 +1,20 @@
+.splash {
+    padding-top: 30px;
+    display:flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
+
+    hr {
+        width: 95%;
+        margin: auto;
+    }
+}
+
 .splash-footer {
     display: flex;
+    padding-top: 30px;
+    padding: 30px 30px 30px 30px;
     flex-direction: row;
     justify-content: space-evenly;
 }
@@ -11,5 +26,28 @@
 }
 
 .splash-info a{
-    border-bottom: dotted 1px;
+    border-bottom: dotted 2.5px;
+}
+
+.splash-footer h3 {
+    text-transform: uppercase;
+    font-family: "Soleil_Bold",Helvetica,Arial,sans-serif;
+}
+
+.splash-footer ul {
+    line-height: 2.5;
+    list-style-type: none;
+    padding-left: 0px;
+
+    li {
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: "Soleil_Light",Helvetica,Arial,sans-serif;
+        }
+
+        a:hover {
+            color: #008a2d
+        }
+    }
 }
