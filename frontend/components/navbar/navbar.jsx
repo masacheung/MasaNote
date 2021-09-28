@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarSessionContainer from './navbar_session_container'
 
-const Navbar = ({ currentUser, logout }) => {
+const Navbar = () => {
     return (
         <header>
             <div className="navbar">
@@ -10,7 +10,14 @@ const Navbar = ({ currentUser, logout }) => {
                     <img src={window.logo} className="logo"/>
                     <p>MasaNote</p>
                 </Link>
-
+                <ul>
+                    <li>
+                        <a href="https://github.com/masacheung">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/">LinkedIn</a>
+                    </li>
+                </ul>
                 <NavBarSessionContainer />
             </div>
         </header>
