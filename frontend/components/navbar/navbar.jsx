@@ -10,6 +10,8 @@ const Navbar = ({ currentUser, logout }) => {
                     <img src={window.logo} className="logo"/>
                     <p>MasaNote</p>
                 </Link>
+
+                <NavBarSessionContainer />
             </div>
         </header>
     )
