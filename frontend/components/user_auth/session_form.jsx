@@ -55,7 +55,7 @@ export default class SessionForm extends React.Component {
                     <div className="session-form-body">
 
                         <div className="session-heading">
-                            <img src={window.logoURL} className="logo"/>
+                            <img src={window.logo} className="logo"/>
                             <h1 className="logo-link">MasaNote</h1>
                             <p>Remember Masa is the creator!</p>
                             <div className="errors">{this.renderErrors()}</div>
