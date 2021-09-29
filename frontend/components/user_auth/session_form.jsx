@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
 export default class SessionForm extends React.Component {
@@ -53,7 +53,9 @@ export default class SessionForm extends React.Component {
                     <div className="session-form-body">
 
                         <div className="session-heading">
-                            <img src={window.logo} className="logo"/>
+                            <Link to="/">
+                                <img src={window.logo} className="logo"/>
+                            </Link>
                             <h1 className="logo-link">MasaNote</h1>
                             <p>Remember Masa is the creator!</p>
                             <div className="errors">{this.renderErrors()}</div>
