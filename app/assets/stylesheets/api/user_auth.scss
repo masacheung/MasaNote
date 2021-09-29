@@ -7,6 +7,16 @@
     min-width: 100%;
 }
 
+.errors {
+
+    ul {
+        padding-left: 0px;
+        list-style-type: none;
+        color: red;
+        padding-bottom: 10px;
+    }
+}
+
 .session-form-container {
     background: #fff;
     position: absolute;
