@@ -12,7 +12,7 @@ class Nav extends React.Component {
         console.log(this.props.currentUser.id);
 
         let newNote = {
-            title: "",
+            title: "Untitled",
             body: "",
             user_id: this.props.currentUser.id,
             notebook_id: notebookId
@@ -35,9 +35,16 @@ class Nav extends React.Component {
                 </button>
                 <ul className="main-nav-list">
                     <li>
+                        <Link to="/notes">Notes</Link>
+                    </li>
+                    <li>
                         <Link to="/" onClick={this.props.logout}>Log out {this.props.currentUser.username}</Link>
                     </li>
                 </ul>
+                <div className="social">
+                    <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/"></a>
+                    <a href="https://github.com/masacheung"></a>
+                </div>
             </div>
         )
     }
