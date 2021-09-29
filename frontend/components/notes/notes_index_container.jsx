@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/session_actions";
-import { fetchNote } from "../../actions/note_actions";
+import { fetchNotes } from "../../actions/note_actions";
 
 import NotesIndex from "./notes_index"
 
-const mSTP = ({session, entities: {notes}}) => {
+const mSTP = (state) => {
     return {
-        notes: Object.values(notes)
+        notes: Object.values(state.entities.notes)
     }
 }
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logoutUser()),
-    fetchNotes: () => dispatch(fetchNote())
+    fetchNotes: () => dispatch(fetchNotes())
 })
 
 export default connect(mSTP, mDTP)(NotesIndex);

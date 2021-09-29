@@ -7,7 +7,7 @@ class Api::NotesController < ApplicationController
     end
 
     def show
-        @note = selected_note
+        @note = Note.find_by(id: params[:id])
         render :show
     end
 
@@ -22,7 +22,7 @@ class Api::NotesController < ApplicationController
     end
 
     def update
-        @note = selected_note
+        @note = Note.find_by(id: params[:id])
 
         if @note.update(note_params)
             render :show
@@ -32,7 +32,7 @@ class Api::NotesController < ApplicationController
     end
 
     def destroy
-        @note = selected_note
+        @note = Note.find_by(id: params[:id])
 
         if @note.destroy
             render :show
@@ -42,10 +42,6 @@ class Api::NotesController < ApplicationController
     end
 
     private
-    def selected_note
-        current_user.notes.find_by(id: params[:id])
-    end
-
     def note_params
         params.require(:note).permit(:title, :body, :user_id, :notebook_id)
     end

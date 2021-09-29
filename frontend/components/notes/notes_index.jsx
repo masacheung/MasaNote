@@ -1,4 +1,5 @@
 import React from 'react';
+import NotesList from './notes_list';
 
 export default class NotesIndex extends React.Component {
     constructor(props){
@@ -10,6 +11,7 @@ export default class NotesIndex extends React.Component {
         return (
             <div>
                 Notes
+                <NotesList notes={this.props.notes} fetchNotes={this.props.fetchNotes}/>
             </div>
         )
     }
