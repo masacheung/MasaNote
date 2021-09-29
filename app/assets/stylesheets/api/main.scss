@@ -1,0 +1,29 @@
+.main {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    height: 100vh;
+    max-width: 100vw;
+}
+
+.quill {
+    display:flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.ql-toolbar{
+    max-height: auto;
+}
+
+.ql-container{
+    max-height: auto;
+    flex-grow: 1;
+    border: none;
+
+}
+.ql-editor{
+    height: auto;
+    border: none;
+}
