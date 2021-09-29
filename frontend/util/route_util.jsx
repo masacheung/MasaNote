@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Route, Redirect, Link } from 'react-router-dom';
 import { withRouter } from "react-router";
 
-const Auth = ({ path, loggedIn, component: Component}) => (
-    <Route path={path} render={(props) => (!loggedIn ? <Component {...props} /> : <Redirect to ="/notes"/>)} />
+const Auth = ({ exact, path, loggedIn, component: Component}) => (
+    <Route path={path} exact={exact} render={(props) => loggedIn ? <Redirect to ="/notes" /> : <Component {...props} /> } />
 )
 
-const Protected = ({ path, loggedIn, component: Component}) => (
-    <Route path={path} render={(props) => (loggedIn ? <Component {...props} /> : <Redirect to ="/"/>)} />
+const Protected = ({ exact, path, loggedIn, component: Component}) => (
+    <Route path={path} exact={exact} render={(props) => loggedIn ? <Component {...props} /> : <Redirect to ="/" />} />
 )
 
 const mSTP = state => {

@@ -25,14 +25,16 @@ const clearErrors = () => ({
 
 export const createUser = (user) => (dispatch) => {
     return SessionApiUtil.createUser(user)
-        .then(user => dispatch(receiveCurrentUser(user))),
-        err => dispatch(receiveErrors(err.responseJSON))
+        .then(user => 
+            dispatch(receiveCurrentUser(user)),
+        err => dispatch(receiveErrors(err.responseJSON)))
+        
 }
 
 export const loginUser = (user) => (dispatch) => {
     return SessionApiUtil.loginUser(user)
-        .then(user => dispatch(receiveCurrentUser(user))),
-        err => dispatch(receiveErrors(err.responseJSON))
+        .then(user => dispatch(receiveCurrentUser(user)),
+        err => dispatch(receiveErrors(err.responseJSON)))
 }
 
 export const logoutUser = () => (dispatch) => {
@@ -41,5 +43,5 @@ export const logoutUser = () => (dispatch) => {
 }
 
 export const clearSessionErrors = () => (dispatch) => {
-    return dispatch(clearErrors())
+    dispatch(clearErrors())
 }
