@@ -5,6 +5,9 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 import {logoutUser} from "./actions/session_actions";
 
+import * as NoteApiUtil from "./util/note_api_util"
+import * as NoteAction from "./actions/note_actions"
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root')
 
@@ -26,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.logout = logoutUser;
+
+  window.createNote = NoteAction.createNote;
 
   ReactDOM.render(<Root store={store}/>, root)
 });
