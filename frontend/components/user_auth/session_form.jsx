@@ -30,7 +30,10 @@ export default class SessionForm extends React.Component {
     }
     
     renderErrors() {
-        return(
+        if (this.props.errors.length === 0){
+            return [];
+        } 
+        return (
             <ul>
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
@@ -40,6 +43,7 @@ export default class SessionForm extends React.Component {
                 ))}
             </ul>
         )
+        
     }
 
     componentDidMount() {
