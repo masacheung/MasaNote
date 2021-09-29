@@ -54,7 +54,7 @@ export default class SessionForm extends React.Component {
 
                         <div className="session-heading">
                             <Link to="/">
-                                <img src={window.logo} className="logo"/>
+                                <img src={window.logo} className="user-auth-logo"/>
                             </Link>
                             <h1 className="logo-link">MasaNote</h1>
                             <p>Remember Masa is the creator!</p>
