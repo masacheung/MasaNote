@@ -7,7 +7,7 @@ class Api::NotesController < ApplicationController
     end
 
     def show
-        @note = Note.find_by(id: params[:id])
+        @note = Note.find_by(id: params[:note][:id])
         render :show
     end
 
@@ -22,7 +22,7 @@ class Api::NotesController < ApplicationController
     end
 
     def update
-        @note = Note.find_by(id: params[:id])
+        @note = Note.find_by(id: params[:note][:id])
 
         if @note.update(note_params)
             render :show
@@ -32,7 +32,7 @@ class Api::NotesController < ApplicationController
     end
 
     def destroy
-        @note = Note.find_by(id: params[:id])
+        @note = Note.find_by(id: params[:note][:id])
 
         if @note.destroy
             render :show

@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logoutUser;
 
   window.createNote = NoteAction.createNote;
+  window.updateNote = NoteAction.updateNote;
 
   ReactDOM.render(<Root store={store}/>, root)
 });
