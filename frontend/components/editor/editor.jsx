@@ -8,6 +8,7 @@ class Editor extends React.Component {
             title: "",
             body: ""
         }
+        this.deleteNote = this.deleteNote.bind(this);
     }
 
     update(field) {
@@ -16,8 +17,12 @@ class Editor extends React.Component {
         }
     }
 
+    deleteNote() {
+        this.props.deleteNote(this.state.id)
+    }
+
     componentDidUpdate(prevProps){
-        if(this.props.noteId !== prevProps.noteId) {
+        if((this.props.noteId !== prevProps.noteId) || (prevProps === null)) {
             this.setState(this.props.note);
         }
     }
@@ -26,6 +31,9 @@ class Editor extends React.Component {
         return (
             <div className="note-editor">
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
+                <button className="note-editor-delete" onClick={this.deleteNote}>
+                    <div>Delete Note</div>
+                </button>
                 <textarea className="note-editor-body" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
             </div>
         )

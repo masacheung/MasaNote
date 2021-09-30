@@ -12,9 +12,10 @@ class NotesList extends React.Component {
     }
 
     render() {
-
+        // const notes = this.props.notes.reverse()
         return(
             <ul>
+                {/* {notes.map(note => <NoteItem note={note} key={note.id} />)} */}
                 {this.props.notes.map(note => <NoteItem note={note} key={note.id} />)}
             </ul>
         )

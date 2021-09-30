@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.createNote = NoteAction.createNote;
   window.updateNote = NoteAction.updateNote;
+  window.deleteNote = NoteApiUtil.deleteNote;
 
   ReactDOM.render(<Root store={store}/>, root)
 });

@@ -12,7 +12,7 @@ class Nav extends React.Component {
         console.log(this.props.currentUser.id);
 
         let newNote = {
-            title: "Untitled",
+            title: "",
             body: "",
             user_id: this.props.currentUser.id,
             notebook_id: notebookId
