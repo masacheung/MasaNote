@@ -32,7 +32,7 @@ class Api::NotesController < ApplicationController
     end
 
     def destroy
-        @note = Note.find_by(id: params[:note][:id])
+        @note = Note.find_by(id: params[:id])
 
         if @note.destroy
             render :show
