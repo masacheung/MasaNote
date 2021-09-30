@@ -1,3 +1,15 @@
+::-webkit-scrollbar {
+    display: none
+}
+
+.notes-index > ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.notes-index > ::-webkit-scrollbar-thumb:hover {
+    background: rgb(125,125,125);
+}
+
 .notes-index {
     display: flex;
     height: 100vh;
