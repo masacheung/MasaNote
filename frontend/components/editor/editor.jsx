@@ -24,9 +24,9 @@ class Editor extends React.Component {
 
     render() {
         return (
-            <div>
-                <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                <textarea placeholder="Body" value={this.state.body} onChange={this.update("body")} />
+            <div className="note-editor">
+                <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
+                <textarea className="note-editor-body" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
             </div>
         )
     }

@@ -31,7 +31,7 @@ class Nav extends React.Component {
                     </div>
                 </div>
                 <button className="new-note" onClick={this.handleNewNote}>
-                    <div className="new-note-icon">+</div><div>New Note</div>
+                    <div className="new-note-icon">+</div><div className="new-note-name">New Note</div>
                 </button>
                 <ul className="main-nav-list">
                     <li>
