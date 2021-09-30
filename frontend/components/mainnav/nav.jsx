@@ -9,7 +9,7 @@ class Nav extends React.Component {
 
     handleNewNote() {
         let notebookId = null;
-        console.log(this.props.currentUser.id);
+        // console.log(this.props.currentUser.id);
 
         let newNote = {
             title: "",

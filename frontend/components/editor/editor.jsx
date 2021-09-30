@@ -18,7 +18,7 @@ class Editor extends React.Component {
     }
 
     deleteNote() {
-        this.props.deleteNote(this.state.id)
+        this.props.deleteNote(this.state.id);
     }
 
     componentDidUpdate(prevProps){
