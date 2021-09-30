@@ -1,6 +1,6 @@
 .main-nav {
     background-color: black;
-    width: 250px;
+    width: 300px;
     color: #a6a6a6;
     text-decoration: none;
     height: 100vh;
@@ -30,16 +30,16 @@
     .new-note {
         background-color: #00a82d;
         border-radius: 20px;
-        width: 90%;
+        width: 80%;
         height: 35px;
         margin: 10px 10px 10px 10px;
         border: none;
         color: white;
         font-size: 14px;
-        text-align: left;
         display: flex;
         align-items: center;
         cursor: pointer;
+        text-align: center;
 
         .new-note-icon {
             margin: 10px;

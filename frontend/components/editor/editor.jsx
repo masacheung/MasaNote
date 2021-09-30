@@ -26,6 +26,7 @@ class Editor extends React.Component {
         return (
             <div>
                 <input type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
+                <textarea placeholder="Body" value={this.state.body} onChange={this.update("body")} />
             </div>
         )
     }

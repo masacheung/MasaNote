@@ -9,9 +9,11 @@ export default class NotesIndex extends React.Component {
 
     render() {
         return (
-            <div>
-                Notes
-                <NotesList notes={this.props.notes} fetchNotes={this.props.fetchNotes}/>
+            <div className="notes-index">
+                <div className="notes-index-header">Notes</div>
+                <div className="notes-index-content">
+                    <NotesList notes={this.props.notes} fetchNotes={this.props.fetchNotes}/>
+                </div>
             </div>
         )
     }

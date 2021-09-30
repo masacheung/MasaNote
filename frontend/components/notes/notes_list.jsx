@@ -14,10 +14,9 @@ class NotesList extends React.Component {
     render() {
 
         return(
-            <div>
-                note list
+            <ul>
                 {this.props.notes.map(note => <NoteItem note={note} key={note.id} />)}
-            </div>
+            </ul>
         )
     }
 }

@@ -6,7 +6,7 @@ import EditorContainer from "./editor/editor_container";
 
 const Main = () => {
     return (
-        <div>
+        <div className="main">
             <Switch>
                 <Route component={NavContainer}/>
             </Switch>
