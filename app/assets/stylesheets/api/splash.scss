@@ -8,6 +8,7 @@
     hr {
         width: 95%;
         margin: auto;
+        border-bottom: 1px solid #000000;
     }
 }
 
@@ -15,6 +16,58 @@
     text-align: center;
     justify-content: center;
     font-family: "Soleil_Light",Helvetica,Arial,sans-serif;
+}
+
+.splash-slogan > .slogan {
+    display: block;
+    font-size: 56px;
+    font-weight: bold;
+    font-family: "Soleil_Medium",Helvetica,Arial,sans-serif;
+    line-height: 150%;
+}
+
+.splash-slogan > .sec-slogan {
+    display: block;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 30px;
+    font-family: "Soleil",Helvetica,Arial,sans-serif;
+}
+
+.splash-slogan > .slogan-sign-up-for-free {
+    background: #00a82d;
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-family: "Soleil_Bold",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    padding: 16px 80px;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.splash-slogan > .slogan-sign-up-for-free:hover {
+    background: #14cc45;
+}
+
+
+
+.splash-slogan > .slogan-log-in-link {
+    color: black;
+    font-family: "Soleil",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    padding-top: 35px;
+    text-decoration: underline;
+    padding-bottom: 60px;
+    text-decoration: none;
+
+}
+
+.splash-slogan > .slogan-log-in-link > a:hover {
+    color: #14cc45;
 }
 
 .splash-footer {
