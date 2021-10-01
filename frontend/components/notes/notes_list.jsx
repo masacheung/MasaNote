@@ -5,11 +5,28 @@ import NoteItem from "./note_item";
 class NotesList extends React.Component {
     constructor(props) {
         super(props);
+        this.handleNewNote = this.handleNewNote.bind(this)
     }
 
     componentDidMount(){
         this.props.fetchNotes();
     }
+
+    handleNewNote() {
+        let notebookId = null;
+
+        let newNote = {
+            title: "",
+            body: "",
+            user_id: this.props.currentUser.id,
+            notebook_id: notebookId
+        }
+
+        this.props.createNote(newNote)
+        .then((res) => this.props.history.push(`/notes/${res.note.id}`))
+
+    }
+
 
     render() {
         let notes = this.props.notes.sort()
@@ -27,6 +44,21 @@ class NotesList extends React.Component {
 
         if(sort_notes){
             notes = sort_notes;
+        }
+
+        if (notes.length === 0){
+            return (
+                <ul>
+                    <div className="notes-list-firstnote">
+                    Create your first note
+                    </div>
+                    <div className="notes-list-clickme">
+                    Click the 
+                    <button onClick={this.handleNewNote} className="notes-list-newnote">+ New Note</button> button <br></br>
+                    <div className="notes-list-clickme-second">in the sidebar to get started.</div>
+                    </div>
+                </ul>
+            )
         }
 
         return(

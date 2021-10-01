@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Editor extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            id: null,
-            title: "",
-            body: ""
+            id: this.props.note.id,
+            title: this.props.note.title,
+            body: this.props.note.body,
+            update: this.props.note.updated_at
         }
         this.deleteNote = this.deleteNote.bind(this);
     }
@@ -22,7 +24,7 @@ class Editor extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if((this.props.noteId !== prevProps.noteId) || (prevProps === null)) {
+        if((this.props.noteId !== prevProps.noteId) || (this.state.note === null)) {
             this.setState(this.props.note);
         }
     }
@@ -30,10 +32,17 @@ class Editor extends React.Component {
     render() {
         return (
             <div className="note-editor">
+                <div className="note-editor-deletePlusdate">
+                    <div className="note-editor-delete-container">
+                    <Link to="/notes" className="note-editor-delete" onClick={this.deleteNote}>
+                        Delete Permanently
+                    </Link>
+                    </div>
+                    <div className="note-editor-date">
+                        Last edited on {this.state.update}
+                    </div>
+                </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                <button className="note-editor-delete" onClick={this.deleteNote}>
-                    <div>Delete Note</div>
-                </button>
                 <textarea className="note-editor-body" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
             </div>
         )

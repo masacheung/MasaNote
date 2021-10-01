@@ -17,7 +17,6 @@ class Nav extends React.Component {
             user_id: this.props.currentUser.id,
             notebook_id: notebookId
         }
-        console.log(newNote);
         this.props.createNote(newNote)
             .then((res) => this.props.history.push(`/notes/${res.note.id}`))
     }
