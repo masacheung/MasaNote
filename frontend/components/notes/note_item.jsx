@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatDateTime } from '../../util/date_util';
 
 const NoteItem = props => {
     let url = `/notes/${props.note.id}`
@@ -16,6 +17,21 @@ const NoteItem = props => {
 
     let date = props.note.updated_at;
 
+    const dateNow = new Date();
+    const updateDate = new Date(date);
+    let displayDate;
+    if((dateNow.getDate() === updateDate.getDate()) && (dateNow.getMonth() === updateDate.getMonth())){
+        if (dateNow.getMinutes() === updateDate.getMinutes()){
+            displayDate = "a few second age";
+        }else if (dateNow.getMinutes() - updateDate.getMinutes() < 10){
+            displayDate = "a few minutes age";
+        }else if (dateNow.getHours() === updateDate.getHours()){
+            let temp = dateNow.getMinutes() - updateDate.getMinutes();
+            displayDate = `${temp} minutes ago`;
+        }
+    }else {
+        displayDate = formatDateTime(date);
+    }
 
     return (
         <Link to={url}>
@@ -27,7 +43,7 @@ const NoteItem = props => {
                 {props.note.body}
             </div>
             <div className="note-item-datetime">
-                {date}
+                {displayDate}
             </div>
         </li>
         </Link>

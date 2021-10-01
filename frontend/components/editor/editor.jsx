@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../util/date_util"
 
 class Editor extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            id: this.props.note.id,
-            title: this.props.note.title,
-            body: this.props.note.body,
-            update: this.props.note.updated_at
+            id: null,
+            title: "",
+            body: "",
+            updated_at: ""
         }
         this.deleteNote = this.deleteNote.bind(this);
     }
@@ -23,13 +24,21 @@ class Editor extends React.Component {
         this.props.deleteNote(this.state.id);
     }
 
+    componentDidMount(){
+        this.props.fetchNotes()
+            .then((res) => {this.setState(this.props.note)});
+    }
+
     componentDidUpdate(prevProps){
-        if((this.props.noteId !== prevProps.noteId) || (this.state.note === null)) {
+        if((this.props.noteId !== prevProps.noteId)) {
             this.setState(this.props.note);
         }
     }
 
     render() {
+        if(!this.props.note) {
+            return null;
+        }
         return (
             <div className="note-editor">
                 <div className="note-editor-deletePlusdate">
@@ -39,7 +48,7 @@ class Editor extends React.Component {
                     </Link>
                     </div>
                     <div className="note-editor-date">
-                        Last edited on {this.state.update}
+                        Last edited on {formatDate(this.state.updated_at)}
                     </div>
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
