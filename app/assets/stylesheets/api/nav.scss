@@ -64,14 +64,33 @@
     }
 
     .main-nav-list {
+        padding-top: 15px;
 
         li {
             padding: 7px 10px 7px 50px;
             font-size: 20px;
+            padding-left: 25px;
+            padding-top: 15px;
             
             &:hover{
                 background-color: #333333;
             }
+
         }
     }
+}
+
+.main-nav-img-note{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-nav-note-img {
+    display: flex;
+    width: 20px;
+    padding-right: 10px;
+}
+
+.main-nav-notes-title {
+    display: flex;
 }

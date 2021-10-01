@@ -35,6 +35,18 @@
     color: #d9d9d9;
 }
 
+.notes-index-img {
+    width: 20px;
+    height: 26px;
+    padding-top: 2px;
+    padding-right: 8px;
+}
+
+.notes-index-img-notes{
+    display: flex;
+    flex-direction: row;
+}
+
 .notes-index-count{
     font-size: 14px;
     color: #a6a6a6;
@@ -83,7 +95,7 @@
     color: #e0e0e0;
     text-align: center;
     justify-content: center;
-    padding-top: 625px;
+    padding-top: 500px;
     font-size: 18px;
 }
 
@@ -106,4 +118,10 @@
 
 .notes-list-clickme-second {
     padding-top: 8px;
+}
+
+.notes-list-img {
+    padding-left: 150px;
+    padding-bottom: 30px;
+    width: 100px;
 }

@@ -50,6 +50,7 @@ class NotesList extends React.Component {
             return (
                 <ul>
                     <div className="notes-list-firstnote">
+                    <img src={window.notePen} className="notes-list-img"/>
                     Create your first note
                     </div>
                     <div className="notes-list-clickme">

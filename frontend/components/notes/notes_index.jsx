@@ -14,7 +14,10 @@ export default class NotesIndex extends React.Component {
     render() {
         return (
             <div className="notes-index">
-                <div className="notes-index-header">Notes
+                <div className="notes-index-header">
+                    <div className="notes-index-img-notes">
+                    <img src={window.note} className="notes-index-img"/>Notes
+                    </div>
                     <div className="notes-index-count">{this.props.notes.length} notes</div>
                 </div>
                 <div className="notes-index-content">

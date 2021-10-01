@@ -34,9 +34,13 @@ class Nav extends React.Component {
                 </button>
                 <ul className="main-nav-list">
                     <li>
-                        <Link to="/notes">Notes</Link>
+                        <div className="main-nav-img-note">
+                            <img src={window.note} className="main-nav-note-img"/>
+                            <Link to="/notes" className="main-nav-notes-title">Notes</Link>
+                        </div>
                     </li>
                     <li>
+                        {/* <img src={window.logout}/> */}
                         <Link to="/" onClick={this.props.logout}>Log out {this.props.currentUser.username}</Link>
                     </li>
                 </ul>
