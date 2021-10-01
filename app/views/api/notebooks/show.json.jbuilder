@@ -3,7 +3,7 @@ json.notebook do
 end
 
 json.notes do
-    json.array! @notes do |note|
-        json.partial! 'api/notes/note', note: note
+    @notes.each do |note|
+        json.extract! note, :id
     end
 end

@@ -8,6 +8,7 @@ class Api::NotebooksController < ApplicationController
 
     def show
         @notebook = Notebook.find_by(id: params[:id])
+        @notes = @notebook.notes
         render :show
     end
 

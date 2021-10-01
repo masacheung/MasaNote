@@ -22,9 +22,9 @@ const NoteItem = props => {
     let displayDate;
     if((dateNow.getDate() === updateDate.getDate()) && (dateNow.getMonth() === updateDate.getMonth())){
         if (dateNow.getMinutes() === updateDate.getMinutes()){
-            displayDate = "a few second age";
+            displayDate = "a few second ago";
         }else if (dateNow.getMinutes() - updateDate.getMinutes() < 10){
-            displayDate = "a few minutes age";
+            displayDate = "a few minutes ago";
         }else if (dateNow.getHours() === updateDate.getHours()){
             let temp = dateNow.getMinutes() - updateDate.getMinutes();
             displayDate = `${temp} minutes ago`;
