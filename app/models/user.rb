@@ -7,10 +7,20 @@ class User < ApplicationRecord
     attr_reader :password
 
     after_initialize :ensure_session_token
+    after_create :create_notebook
 
     has_many :notes,
         foreign_key: :user_id,
         class_name: "Note"
+
+    has_many :notebooks,
+        foreign_key: :user_id,
+        class_name: "Notebook"
+
+    def create_notebook
+        notebook = Notebook.new({name: "All Note", user_id: self.id})
+        notebook.save
+    end
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

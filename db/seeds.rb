@@ -10,4 +10,4 @@
 User.destroy_all
 Note.destroy_all
 
-demo_user = User.create!(username: "demo", password: "password")
+demo_user = User.create!(username: "demo", password: "password");
