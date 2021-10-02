@@ -46,8 +46,10 @@ class Nav extends React.Component {
                         </div>
                     </li>
                     <li>
-                        {/* <img src={window.logout}/> */}
+                        <div className="main-nav-img-note">
+                        <img src={window.logoutimg} className="main-nav-note-img"/>
                         <Link to="/" onClick={this.props.logout}>Log out {this.props.currentUser.username}</Link>
+                        </div>
                     </li>
                 </ul>
                 <div className="social">
