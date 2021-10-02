@@ -40,6 +40,12 @@ class Nav extends React.Component {
                         </div>
                     </li>
                     <li>
+                        <div className="main-nav-img-note">
+                            <img src={window.notebook} className="main-nav-note-img"/>
+                            <Link to="" className="main-nav-notes-title">Notebooks</Link>
+                        </div>
+                    </li>
+                    <li>
                         {/* <img src={window.logout}/> */}
                         <Link to="/" onClick={this.props.logout}>Log out {this.props.currentUser.username}</Link>
                     </li>
