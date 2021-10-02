@@ -39,12 +39,14 @@ class Nav extends React.Component {
                             <Link to="/notes" className="main-nav-notes-title">Notes</Link>
                         </div>
                     </li>
+                    <br className="main-nav-gap"></br>
                     <li>
                         <div className="main-nav-img-note">
                             <img src={window.notebook} className="main-nav-note-img"/>
                             <Link to="" className="main-nav-notes-title">Notebooks</Link>
                         </div>
                     </li>
+                    <br className="main-nav-gap"></br>
                     <li>
                         <div className="main-nav-img-note">
                         <img src={window.logoutimg} className="main-nav-note-img"/>
