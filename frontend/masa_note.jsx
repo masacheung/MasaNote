@@ -8,6 +8,8 @@ import {logoutUser} from "./actions/session_actions";
 import * as NoteApiUtil from "./util/note_api_util"
 import * as NoteAction from "./actions/note_actions"
 
+import * as NotebookUtil from "./util/notebook_api_util"
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root')
 
@@ -33,6 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.createNote = NoteAction.createNote;
   window.updateNote = NoteAction.updateNote;
   window.deleteNote = NoteApiUtil.deleteNote;
+
+  window.fetchNotebooks = NotebookUtil.fetchNotebooks;
+  window.fetchNotebook = NotebookUtil.fetchNotebook;
+  window.updateNotebook = NotebookUtil.updateNotebook;
+  window.createNotebook = NotebookUtil.createNotebook;
+  window.deleteNotebook = NotebookUtil.deleteNotebook;
 
   ReactDOM.render(<Root store={store}/>, root)
 });

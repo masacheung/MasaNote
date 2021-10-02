@@ -3,7 +3,7 @@ json.notebook do
 end
 
 json.notes do
-    @notes.each do |note|
+    json.array! @notes do |note|
         json.extract! note, :id
     end
 end
