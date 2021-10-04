@@ -1,0 +1,63 @@
+.notebooks-index {
+    padding: 30px;
+    color: #d9d9d9;
+    background-color: #1a1a1a;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    .notebooks-index-header {
+        height: 50px;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+
+    .notebooks-index-notebooks {
+        display: flex;
+        align-items: center;
+        padding-top: 50px;
+
+        h2 {
+            width: 100%;
+            font-size: 17px;
+            font-weight: 400;
+        }
+    }
+
+    .notebooks-index-sub-header {
+        padding-top: 50px;
+        color: #a6a6a6;
+
+        li:first-child {
+            font-size: 11px;
+            border-top: 2px solid #737373;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            font-size: 14px;
+
+            .sub-header-title{
+                width: 55%;
+            }
+
+            .sub-header-created{
+                width: 22.5%;
+            }
+
+            .sub-header-updated{
+                width: 22.5%;
+            }
+
+            .sub-header-actions{
+                text-align: right;
+            }
+        }
+    }
+}

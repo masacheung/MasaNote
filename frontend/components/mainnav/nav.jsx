@@ -21,6 +21,11 @@ class Nav extends React.Component {
             .then((res) => this.props.history.push(`/notes/${res.note.id}`))
     }
 
+    componentDidMount(){
+        this.props.fetchNotebooks();
+        this.props.fetchNotes();
+    }
+
     render() {
         return(
             <div className="main-nav">
@@ -43,7 +48,7 @@ class Nav extends React.Component {
                     <li>
                         <div className="main-nav-img-note">
                             <img src={window.notebook} className="main-nav-note-img"/>
-                            <Link to="" className="main-nav-notes-title">Notebooks</Link>
+                            <Link to="/notebooks" className="main-nav-notes-title">Notebooks</Link>
                         </div>
                     </li>
                     <br className="main-nav-gap"></br>

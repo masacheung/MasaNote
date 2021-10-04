@@ -9,6 +9,7 @@ export default class NotesIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchNotes();
+        this.props.fetchNotebooks();
     }
 
     render() {
