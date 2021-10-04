@@ -4,12 +4,75 @@ import { Link } from "react-router-dom"
 export default class NotebooksIndex extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            name: "",
+            modal: false,
+            notebookmodal: false,
+            rename: null,
+            renameNotebook: ""
+        }
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleCreateNotebook = this.handleCreateNotebook.bind(this);
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.handleOpenNotebookModal = this.handleOpenNotebookModal.bind(this);
+        this.handleCloseNotebookModal = this.handleCloseNotebookModal.bind(this);
+        this.handleOpenRenameModal = this.handleOpenRenameModal.bind(this);
+        this.handleRename = this.handleRename.bind(this);   
     }
 
     componentDidMount(){
         this.props.fetchNotebooks();
     }
 
+    handleDelete(notebookId){
+        this.props.deleteNotebook(notebookId);
+    }
+
+    handleCreateNotebook() {
+        let newNotebook = {
+            name: this.state.name,
+            user_id: this.props.currentUser.id
+        }
+        this.props.createNotebook(newNotebook);
+        this.handleCloseNotebookModal();
+    }
+
+    update(field) {
+        return e => {this.state({[field]: e.currentTarget.value})}
+    }
+
+    handleOpenModal() {
+        this.setState({modal: true})
+    }
+
+    handleCloseModal() {
+        this.setState({modal: false})
+    }
+
+    handleOpenNotebookModal() {
+        this.setState({notebookmodal: true})
+    }
+
+    handleCloseNotebookModal() {
+        this.setState({notebookmodal: false})
+    }
+
+    handleOpenRenameModal(notebook) {
+        this.handleOpenModal();
+
+        this.setState({
+            rename: notebook,
+            renameNotebook: notebook.name
+        })
+    }
+
+    handleRename() {
+        let notebook = this.state.rename;
+        notebook.name = this.state.renameNotebook;
+        this.props.updateNotebook(notebook);
+        this.handleCloseModal();
+    }
 
     render() {
         if(!this.props.notebooks) {
