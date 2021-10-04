@@ -38,11 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.updateNote = NoteAction.updateNote;
   window.deleteNote = NoteApiUtil.deleteNote;
 
-  window.fetchNotebooks = NotebookUtil.fetchNotebooks;
-  window.fetchNotebook = NotebookUtil.fetchNotebook;
-  window.updateNotebook = NotebookUtil.updateNotebook;
-  window.createNotebook = NotebookUtil.createNotebook;
-  window.deleteNotebook = NotebookUtil.deleteNotebook;
+  window.fetchNotebooks = NotebookAction.fetchNotebooks;
+  window.fetchNotebook = NotebookAction.fetchNotebook;
+  window.updateNotebook = NotebookAction.updateNotebook;
+  window.createNotebook = NotebookAction.createNotebook;
+  window.deleteNotebook = NotebookAction.deleteNotebook;
+
 
   ReactDOM.render(<Root store={store}/>, root)
 });

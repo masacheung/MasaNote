@@ -10,7 +10,7 @@ const receiveNotebooks = (notebooks) => ({
 })
 
 const receiveNotebook = (notebook, notes = {}) => ({
-    type: REMOVE_NOTEBOOK,
+    type: RECEIVE_NOTEBOOK,
     notebook,
     notes
 })
