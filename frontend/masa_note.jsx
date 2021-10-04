@@ -9,6 +9,8 @@ import * as NoteApiUtil from "./util/note_api_util"
 import * as NoteAction from "./actions/note_actions"
 
 import * as NotebookUtil from "./util/notebook_api_util"
+import * as NotebookAction from "./actions/notebook_actions"
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root')
