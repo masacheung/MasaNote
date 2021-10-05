@@ -9,9 +9,8 @@ const notebooksReducer = (state = {}, action) => {
         case RECEIVE_NOTEBOOKS:
             return action.notebooks;
         case RECEIVE_NOTEBOOK:
-            // newState[action.notebook.id] = action.notebook;
-            // return newState;
-            return Object.assign({}, state, {[action.notebook.id]: action.notebook});
+            newState[action.notebook.id] = action.notebook;
+            return newState;
         case REMOVE_NOTEBOOK:
             delete newState[action.notebookId];
             return newState;
