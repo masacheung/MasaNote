@@ -33,6 +33,8 @@ const NoteItem = props => {
         displayDate = formatDateTime(date);
     }
 
+    const body = props.note.body.slice(0,150).replace(/<[^>]*>?/gm, '');
+
     return (
         <Link to={url}>
         <li>
@@ -40,7 +42,7 @@ const NoteItem = props => {
                 {title}
             </div>
             <div className="note-item-body">
-                {props.note.body}
+                {body}
             </div>
             <div className="note-item-datetime">
                 {displayDate}

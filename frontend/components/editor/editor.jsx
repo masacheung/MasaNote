@@ -13,10 +13,10 @@ class Editor extends React.Component {
             title: "",
             body: "",
             updated_at: "",
-            showToolbar: false
         }
         this.deleteNote = this.deleteNote.bind(this);
         this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
+        this.setToolbar = this.setToolbar.bind(this);
     }
 
     update(field) {
@@ -31,6 +31,10 @@ class Editor extends React.Component {
 
     deleteNote() {
         this.props.deleteNote(this.state.id);
+    }
+
+    setToolbar(status) {
+        this.setState({showToolbar: status})
     }
 
     componentDidMount(){
@@ -59,10 +63,9 @@ class Editor extends React.Component {
                     <div className="note-editor-date">
                         Last edited on {formatDate(this.state.updated_at)}
                     </div>
-                    <EditorToolbar showToolbar={true} />
                 </div>
-                <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} formats={format}/>
+                <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
+                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} formats={format} onFocus={() => this.setToolbar(true)}/>
             </div>
         )
     }
