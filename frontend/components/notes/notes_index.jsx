@@ -13,13 +13,21 @@ export default class NotesIndex extends React.Component {
     }
 
     render() {
+
+        let singleNote;
+        if(this.props.notes.length <= 1){
+            singleNote = "note";
+        }else {
+            singleNote = "notes";
+        }
+
         return (
             <div className="notes-index">
                 <div className="notes-index-header">
                     <div className="notes-index-img-notes">
                     <img src={window.note} className="notes-index-img"/>Notes
                     </div>
-                    <div className="notes-index-count">{this.props.notes.length} notes</div>
+                    <div className="notes-index-count">{this.props.notes.length} {singleNote}</div>
                 </div>
                 <div className="notes-index-content">
                     <NotesList notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>

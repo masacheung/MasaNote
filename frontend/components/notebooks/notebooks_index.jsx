@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Modal from 'react-modal';
+import { formatDateNotebook } from "../../util/date_util";
 
 export default class NotebooksIndex extends React.Component{
     constructor(props){
@@ -39,7 +41,7 @@ export default class NotebooksIndex extends React.Component{
     }
 
     update(field) {
-        return e => {this.state({[field]: e.currentTarget.value})}
+        return e => {this.setState({[field]: e.currentTarget.value})}
     }
 
     handleOpenModal() {
@@ -75,21 +77,26 @@ export default class NotebooksIndex extends React.Component{
     }
 
     render() {
-        if(!this.props.notebooks) {
-            return (
-                <div>
-                    <h1>Notebooks</h1>
-                    <h2>{this.props.notebooks.length} notebook</h2>
-                </div>
-            )
+
+        let singleNotebook;
+        if (this.props.notebooks.length <= 1){
+            singleNotebook = "notebook";
+        }else {
+            singleNotebook = "notebooks";
         }
+
+        console.log(this.props.currentUser);
 
         return (
             <div className="notebooks-index">
                 <div className="notebooks-index-header">
                     <h1>Notebooks</h1>
                     <div className="notebooks-index-notebooks">
-                        <h2>{this.props.notebooks.length} notebook</h2>
+                        <h2>{this.props.notebooks.length} {singleNotebook}</h2>
+
+                        <button onClick={this.handleOpenNotebookModal} className="notebooks-index-new-notebook-button">
+                            <div><img src={window.notebook} className="notebooks-index-new-notebook-img" /> New Notebook</div>
+                        </button>
                     </div>
                 </div>
                 <ul className="notebooks-index-sub-header"> 
@@ -99,11 +106,30 @@ export default class NotebooksIndex extends React.Component{
                         <div className="sub-header-updated">UPDATED</div>
                         <div className="sub-header-actions">ACTIONS</div>
                     </li>
+                    {
+                        this.props.notebooks.map((notebook) => 
+                        <li key={notebook.id}>
+                            <div className="notebooks-index-list-title"><img src={window.notebook} className="notebooks-index-new-notebook-img" /> {notebook.name}</div>
+                            <div className="notebooks-index-list-created">{this.props.currentUser.username}</div>
+                            <div className="notebooks-index-list-updated">{formatDateNotebook(notebook.updated_at)}</div>
+                            <div className="notebooks-index-list-actions">
+                                <button className="rename-button" onClick={() => this.handleOpenRenameModal(notebook)}>Rename</button>
+                                <button className="delete-button" onClick={() => this.handleDelete(notebook.id)}>Delete</button>
+                            </div>
+                        </li>)
+                    }
                 </ul>
-
-                <div className="notebooks-index-allnotebooks">
-                    {this.props.notebooks.map((notebook => <li>{notebook.name}</li>))}
-                </div>
+                <Modal isOpen={this.state.modal} className="my-modal">
+                    <div>
+                        <h2 className="modal-title">Rename notebook</h2>
+                        <label className="modal-name">Name</label>
+                        <input className="rename-notebook-input" type="text" placeholder="Notebook name" value={this.state.renameNotebook} onChange={this.update('renameNotebook')}/>
+                        <div className="modal-buttons">
+                                <button className="cancel" onClick={this.handleCloseModal}>Cancel</button>
+                                <button className="continue" onClick={this.handleRename}>Continue</button>
+                        </div>
+                    </div>
+                </Modal>
             </div>
         );
     }
