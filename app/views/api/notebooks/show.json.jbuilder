@@ -4,6 +4,6 @@ end
 
 json.notes do
     json.array! @notes do |note|
-        json.extract! note, :id
+        json.partial! 'api/notes/note', note: note
     end
 end

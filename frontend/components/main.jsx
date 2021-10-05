@@ -4,6 +4,7 @@ import NavContainer from "./mainnav/nav_container";
 import NotesIndexContainer from "./notes/notes_index_container";
 import NotebooksIndexContainer from "./notebooks/notebooks_index_container";
 import EditorContainer from "./editor/editor_container";
+import NotebookShowContainer from "./notebooks/notebook_show_container";
 
 const Main = () => {
     return (
@@ -13,6 +14,7 @@ const Main = () => {
             </Switch>
 
             <Route exact path="/notebooks" component={NotebooksIndexContainer}/>
+            <Route path="/nothbooks/:notebookId/" component={NotebookShowContainer}/>
             <Route path="/notes" component={NotesIndexContainer}/>
             <Route path="/notes/:noteId" component={EditorContainer}/>
         </div>
