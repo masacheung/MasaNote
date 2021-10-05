@@ -53,7 +53,7 @@ class Editor extends React.Component {
                     </div>
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                <textarea className="note-editor-body" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
+                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
             </div>
         )
     }
