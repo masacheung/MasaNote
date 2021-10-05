@@ -63,6 +63,10 @@
             border-top: 2px solid #737373;
         }
 
+        li:nth-child(even) {
+            background-color: #262626;
+        }
+
         li {
             display: flex;
             align-items: center;
@@ -70,15 +74,15 @@
             font-size: 14px;
 
             .sub-header-title{
-                width: 55%;
+                width: 47%;
             }
 
             .sub-header-created{
-                width: 22.5%;
+                width: 19.5%;
             }
 
             .sub-header-updated{
-                width: 22.5%;
+                width: 25%;
             }
 
             .sub-header-actions{
@@ -105,9 +109,47 @@
             .notebooks-index-list-updated {
                 width: 22.5%;
             }
+
+            .notebooks-index-list-actions {
+                display: flex;
+                align-items: center;
+                color: black;
+
+                .rename-button {
+                    background-color: #737373;
+                    border-radius: 3px;
+                    border: none;
+                    margin: 0px 5px 0px 5px;
+                    height: 25px;
+                    padding: 5px 10px 5px 12px;
+                }
+
+                .rename-button:hover {
+                    background-color: lightgray;
+                }
+
+                .delete-button {
+                    background-color: red;
+                    border-radius: 3px;
+                    border: none;
+                    margin: 0px 5px 0px 5px;
+                    height: 25px;
+                    padding: 5px 10px 5px 12px;
+                }
+
+                .delete-button:hover {
+                    background-color: lightcoral;
+                }
+            }
         }
 
-
+        li:hover:not(:first-child){
+            background-color: #333333;
+        }
 
     }
+}
+
+.link {
+    display: flex;
 }

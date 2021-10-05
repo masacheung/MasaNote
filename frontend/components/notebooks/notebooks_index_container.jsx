@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchNotebooks } from "../../actions/notebook_actions"
+import { fetchNotebooks, createNotebook, updateNotebook, deleteNotebook } from "../../actions/notebook_actions"
 import { createUser } from '../../actions/session_actions';
 import NotebooksIndex from './notebooks_index';
 
@@ -12,7 +12,10 @@ const mSTP = ({session, entities : {notebooks, users}, ownProps}) => {
 
 const mDTP = dispatch => {
     return {
-        fetchNotebooks: () => dispatch(fetchNotebooks)
+        fetchNotebooks: () => dispatch(fetchNotebooks),
+        createNotebook: (notebook) => dispatch(createNotebook(notebook)),
+        updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
+        deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
     }
 }
 

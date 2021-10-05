@@ -109,7 +109,9 @@ export default class NotebooksIndex extends React.Component{
                     {
                         this.props.notebooks.map((notebook) => 
                         <li key={notebook.id}>
-                            <div className="notebooks-index-list-title"><img src={window.notebook} className="notebooks-index-new-notebook-img" /> {notebook.name}</div>
+                            <div className="notebooks-index-list-title">
+                                <Link to={`/notebooks/${notebook.id}`} className="link"><img src={window.notebook} className="notebooks-index-new-notebook-img" /> {notebook.name}</Link>
+                            </div>
                             <div className="notebooks-index-list-created">{this.props.currentUser.username}</div>
                             <div className="notebooks-index-list-updated">{formatDateNotebook(notebook.updated_at)}</div>
                             <div className="notebooks-index-list-actions">
