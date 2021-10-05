@@ -1,4 +1,5 @@
 import { RECEIVE_NOTEBOOKS, RECEIVE_NOTEBOOK, REMOVE_NOTEBOOK } from "../actions/notebook_actions";
+import { RECEIVE_NOTES } from "../actions/note_actions";
 
 const notebooksReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -9,8 +10,9 @@ const notebooksReducer = (state = {}, action) => {
             // return action.notebooks;
             return Object.assign({}, state, action.notebooks);
         case RECEIVE_NOTEBOOK:
-            newState[action.notebook.id] = action.notebook;
-            return newState;
+            // newState[action.notebook.id] = action.notebook;
+            // return newState;
+            return Object.assign({}, state, {[action.notebook.id]: action.notebook});
         case REMOVE_NOTEBOOK:
             delete newState[action.notebookId];
             return newState;

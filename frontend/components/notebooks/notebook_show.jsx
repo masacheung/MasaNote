@@ -1,4 +1,5 @@
 import React from 'react';
+import NotesList from "../notes/notes_list";
 
 export default class NotebookShow extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ export default class NotebookShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchNotebook(this.props.match.params.notebookId);
+        this.props.fetchNotes();
     }
 
     componentDidUpdate(prevProps) {
@@ -16,11 +18,34 @@ export default class NotebookShow extends React.Component {
     }
 
     render() {
+
+        const notes = Object.values(this.props.notes);
+        let singleNote;
+        if(notes.length <= 1){
+            singleNote = "note";
+        }else {
+            singleNote = "notes";
+        }
+
+        let notebook;
+        if(!this.props.notebook){
+            notebook = "Notebook";
+        }else {
+            notebook = this.props.notebook.name;
+        }
+
+
         return (
-            <div>
-                <h1>{this.props.notebook.name}</h1>
-                
-                <h2>{this.props.notes.length} notes</h2>
+            <div className="notes-index">
+                <div className="notes-index-header">
+                    <div className="notes-index-img-notes">
+                        <img src={window.notebook} className="notes-index-img"/> {notebook}
+                    </div>
+                    <div className="notes-index-count">{notes.length} {singleNote}</div>
+                </div>
+                <div className="notes-index-content">
+                    <NotesList notes={notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+                </div>
             </div>
         )
     }

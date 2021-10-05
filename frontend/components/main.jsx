@@ -14,7 +14,7 @@ const Main = () => {
             </Switch>
 
             <Route exact path="/notebooks" component={NotebooksIndexContainer}/>
-            <Route path="/nothbooks/:notebookId/" component={NotebookShowContainer}/>
+            <Route path="/notebooks/:notebookId" component={NotebookShowContainer}/>
             <Route path="/notes" component={NotesIndexContainer}/>
             <Route path="/notes/:noteId" component={EditorContainer}/>
         </div>
