@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../util/date_util"
+import ReactQuill from 'react-quill';
 
 class Editor extends React.Component {
     constructor(props){
