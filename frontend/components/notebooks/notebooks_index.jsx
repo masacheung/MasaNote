@@ -119,14 +119,27 @@ export default class NotebooksIndex extends React.Component{
                         </li>)
                     }
                 </ul>
-                <Modal isOpen={this.state.modal} className="my-modal">
-                    <div>
+                <Modal isOpen={this.state.modal} className="overlay">
+                    <div className="my-modal">
                         <h2 className="modal-title">Rename notebook</h2>
                         <label className="modal-name">Name</label>
                         <input className="rename-notebook-input" type="text" placeholder="Notebook name" value={this.state.renameNotebook} onChange={this.update('renameNotebook')}/>
                         <div className="modal-buttons">
                                 <button className="cancel" onClick={this.handleCloseModal}>Cancel</button>
                                 <button className="continue" onClick={this.handleRename}>Continue</button>
+                        </div>
+                    </div>
+                </Modal>
+
+                <Modal isOpen={this.state.notebookmodal} className="overlay">
+                    <div className="my-create-modal">
+                        <h2 className="create-modal-title">Create new notebook</h2>
+                        <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared.</p>
+                        <label className="create-modal-name">Name</label>
+                        <input className="create-modal-notebook-input" type="text" placeholder="Notebook name" value={this.state.name} onChange={this.update('name')}/>
+                        <div className="create-modal-buttons">
+                            <button className="create-modal-cancel" onClick={this.handleCloseNotebookModal}>Cancel</button>
+                            <button className="create-modal-create" onClick={this.handleCreateNotebook}>Create</button>
                         </div>
                     </div>
                 </Modal>
