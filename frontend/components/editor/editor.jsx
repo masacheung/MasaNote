@@ -51,12 +51,20 @@ class Editor extends React.Component {
     render() {
         if(!this.props.note) {
             return null;
+        } 
+
+        let url;
+        if(this.props.match.params.notebookId){
+            url = `/notebooks/${this.props.match.params.notebookId}`;
+        }else {
+            url = "/notes"
         }
+        
         return (
             <div className="note-editor">
                 <div className="note-editor-deletePlusdate">
                     <div className="note-editor-delete-container">
-                    <Link to="/notes" className="note-editor-delete" onClick={this.deleteNote}>
+                    <Link to={url} className="note-editor-delete" onClick={this.deleteNote}>
                         Delete Permanently
                     </Link>
                     </div>

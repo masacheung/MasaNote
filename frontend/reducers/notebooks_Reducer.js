@@ -7,8 +7,7 @@ const notebooksReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_NOTEBOOKS:
-            // return action.notebooks;
-            return Object.assign({}, state, action.notebooks);
+            return action.notebooks;
         case RECEIVE_NOTEBOOK:
             // newState[action.notebook.id] = action.notebook;
             // return newState;

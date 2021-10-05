@@ -9,7 +9,8 @@ class Nav extends React.Component {
 
     handleNewNote() {
         let notebookId = 1;
-        // console.log(this.props.currentUser.id);
+
+        console.log(this.props.match.params.notebookId);
         if(this.props.match.params.notebookId) {
             notebookId = this.props.match.params.notebookId;
 
@@ -21,7 +22,7 @@ class Nav extends React.Component {
             }
 
             this.props.createNote(newNote)
-            .then((res) => this.props.history.push(`/notebooks/${notebookId}/${res.note.id}`))
+                .then((res) => this.props.history.push(`/notebooks/${notebookId}/${res.note.id}`))
         }else {
             notebookId = this.props.notebooks[0].id;
 
@@ -33,7 +34,7 @@ class Nav extends React.Component {
             }
 
             this.props.createNote(newNote)
-            .then((res) => this.props.history.push(`/notes/${res.note.id}`))
+                .then((res) => this.props.history.push(`/notes/${res.note.id}`))
         }
     }
 

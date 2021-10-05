@@ -23,10 +23,17 @@ export default class SessionForm extends React.Component {
     }
 
     handleDemo(e) {
-        this.props.processForm({
-            username: "demo",
-            password: "password"
-        })
+        if(this.props.formType === "login"){
+            this.props.processForm({
+                username: "demo",
+                password: "password"
+            })
+        }else{
+            this.props.login({
+                username: "demo",
+                password: "password"
+            })
+        }
     }
     
     renderErrors() {
