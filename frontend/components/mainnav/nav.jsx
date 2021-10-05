@@ -10,15 +10,31 @@ class Nav extends React.Component {
     handleNewNote() {
         let notebookId = 1;
         // console.log(this.props.currentUser.id);
+        if(this.props.match.params.notebookId) {
+            notebookId = this.props.match.params.notebookId;
 
-        let newNote = {
-            title: "",
-            body: "",
-            user_id: this.props.currentUser.id,
-            notebook_id: notebookId
-        }
-        this.props.createNote(newNote)
+            let newNote = {
+                title: "",
+                body: "",
+                user_id: this.props.currentUser.id,
+                notebook_id: notebookId
+            }
+
+            this.props.createNote(newNote)
+            .then((res) => this.props.history.push(`/notebooks/${notebookId}/${res.note.id}`))
+        }else {
+            notebookId = this.props.notebooks[0].id;
+
+            let newNote = {
+                title: "",
+                body: "",
+                user_id: this.props.currentUser.id,
+                notebook_id: notebookId
+            }
+
+            this.props.createNote(newNote)
             .then((res) => this.props.history.push(`/notes/${res.note.id}`))
+        }
     }
 
     componentDidMount(){

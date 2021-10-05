@@ -15,6 +15,7 @@ const Main = () => {
 
             <Route exact path="/notebooks" component={NotebooksIndexContainer}/>
             <Route path="/notebooks/:notebookId" component={NotebookShowContainer}/>
+            <Route path="/notebooks/:notebookId/:noteId" component={EditorContainer}/>
             <Route path="/notes" component={NotesIndexContainer}/>
             <Route path="/notes/:noteId" component={EditorContainer}/>
         </div>

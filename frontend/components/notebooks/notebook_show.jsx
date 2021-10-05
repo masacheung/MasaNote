@@ -1,5 +1,5 @@
 import React from 'react';
-import NotesList from "../notes/notes_list";
+import NotebookNotesList from "./notebook_notes_list"
 
 export default class NotebookShow extends React.Component {
     constructor(props) {
@@ -44,7 +44,7 @@ export default class NotebookShow extends React.Component {
                     <div className="notes-index-count">{notes.length} {singleNote}</div>
                 </div>
                 <div className="notes-index-content">
-                    <NotesList notes={notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+                    <NotebookNotesList notes={notes} history={this.props.history} notebookId={this.props.match.params.notebookId} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
                 </div>
             </div>
         )

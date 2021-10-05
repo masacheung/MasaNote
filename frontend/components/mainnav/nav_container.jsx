@@ -5,11 +5,11 @@ import { createNote, fetchNotes } from '../../actions/note_actions';
 import Nav from './nav';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 
-const mSTP = ({ session, entities: {users}}, ownProps) => {
+const mSTP = ({ session, entities: {users, notebooks, notes}}, ownProps) => {
     return {
         currentUser: users[session.id],
-        notebooks: fetchNotebooks(),
-        notes: fetchNotes()
+        notebooks: Object.values(notebooks),
+        notes: Object.values(notes)
     }
 }
 
