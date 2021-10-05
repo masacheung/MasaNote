@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../util/date_util"
 import ReactQuill from 'react-quill';
+import EditorToolbar from "./editor_toolbar";
+import { format } from "./editor_toolbar";
 
 class Editor extends React.Component {
     constructor(props){
@@ -10,15 +12,21 @@ class Editor extends React.Component {
             id: null,
             title: "",
             body: "",
-            updated_at: ""
+            updated_at: "",
+            showToolbar: false
         }
         this.deleteNote = this.deleteNote.bind(this);
+        this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
     }
 
     update(field) {
         return e => {
             this.setState({[field]: e.currentTarget.value}, () => {this.props.updateNote(this.state)})
         }
+    }
+
+    handleQuillUpdate(text) {
+        this.setState({body: text}, () => this.props.updateNote(this.state))
     }
 
     deleteNote() {
@@ -51,9 +59,10 @@ class Editor extends React.Component {
                     <div className="note-editor-date">
                         Last edited on {formatDate(this.state.updated_at)}
                     </div>
+                    <EditorToolbar showToolbar={true} />
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")}/>
-                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.update("body")} />
+                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} formats={format}/>
             </div>
         )
     }

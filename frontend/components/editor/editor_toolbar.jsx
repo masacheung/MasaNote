@@ -30,7 +30,32 @@ export const format = [
 
 const EditorToolbar = ({ showToolbar }) => (
     <div>
+        <span className="ql-formats">
+            <select className="ql-header" defaultValue="3">
+                <option value="1">Large header</option>
+                <option value="2">Medium header</option>
+                <option value="3">Small header</option>
+            </select>
+
+            <select className="ql-font" defaultValue="Sans-Serif">
+                <option value="Sans-Serif">Sans-Serif</option>
+                <option value="Serif">Serif</option>
+                <option value="Monospace">Monospace</option>
+                <option value="Script">Script</option>
+            </select>
+            
+            <select className="ql-size" defaultValue="small">
+                <option value="small">12</option>
+                <option value="medium">16</option>
+                <option value="large">24</option>
+            </select>
+        </span>
         
+        <span className="ql-formats">
+            <button className="ql-bold" />
+            <button className="ql-italic"/>
+            <button className="underline"/>
+        </span>
     </div>
 )
 
