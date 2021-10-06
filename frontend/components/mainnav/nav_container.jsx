@@ -5,11 +5,20 @@ import { createNote, fetchNotes } from '../../actions/note_actions';
 import Nav from './nav';
 import { fetchNotebooks } from '../../actions/notebook_actions';
 
-const mSTP = ({ session, entities: {users, notebooks, notes}}, ownProps) => {
+// const mSTP = ({ session, entities: {users, notebooks, notes}}, ownProps) => {
+//     return {
+//         currentUser: users[session.id],
+//         notebooks: Object.values(notebooks),
+//         notes: Object.values(notes),
+//         notebookId: ownProps.match.params.notebookId
+//     }
+// }
+
+const mSTP = (state) => {
     return {
-        currentUser: users[session.id],
-        notebooks: Object.values(notebooks),
-        notes: Object.values(notes)
+        currentUser: state.entities.users[state.session.id],
+        notebooks: Object.values(state.entities.notebooks),
+        notes: Object.values(state.entities.notes)
     }
 }
 

@@ -21,7 +21,7 @@ class NotebookNotesList extends React.Component {
         }
 
         this.props.createNote(newNote)
-        .then((res) => this.props.history.push(`/notebooks/${this.props.notebookId}/${res.note.id}`))
+            .then((res) => this.props.history.push(`/notebooks/${this.props.notebookId}/${res.note.id}`))
     }
 
 
