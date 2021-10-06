@@ -46,8 +46,11 @@ class Nav extends React.Component {
         return(
             <div className="main-nav">
                 <div className="main-nav-user">
+                    <div className="main-nav-profile">
+                        <img src={window.profile} className="main-nav-profile-img"/>
+                    </div>
                     <div className="main-nav-username">
-                        {this.props.currentUser.username}
+                        Welcome, {this.props.currentUser.username}
                     </div>
                 </div>
                 <button className="new-note" onClick={this.handleNewNote}>
@@ -76,8 +79,12 @@ class Nav extends React.Component {
                     </li>
                 </ul>
                 <div className="social">
-                    <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/"></a>
-                    <a href="https://github.com/masacheung"></a>
+                    <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/">
+                        <img src={window.linkedIn} className="social-img"/>
+                    </a>
+                    <a href="https://github.com/masacheung">
+                        <img src={window.github} className="social-img"/>
+                    </a>
                 </div>
             </div>
         )

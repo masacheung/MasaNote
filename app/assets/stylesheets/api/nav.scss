@@ -17,7 +17,7 @@
         font-size: 20px;
         color: #a6a6a6;
         margin: 5px;
-        text-align: center;
+        text-align: left;
         padding-left: 20px;
         padding-top: 5px;
     }
@@ -99,4 +99,31 @@
     display: block;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding-top: 800px;
+}
+
+.social-img {
+    display: flex;
+    width: 40px;
+    bottom: 0;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.social > a:hover {
+    color: white;
+}
+
+.main-nav-profile-img {
+    width: 50px;
+    padding-left: 20px;
+    border-radius: 50%;
+    padding-top: -20px;
 }
