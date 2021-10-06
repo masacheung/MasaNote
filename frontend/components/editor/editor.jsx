@@ -13,10 +13,12 @@ class Editor extends React.Component {
             title: "",
             body: "",
             updated_at: "",
+            fullscreen: false
         }
         this.deleteNote = this.deleteNote.bind(this);
         this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
         this.setToolbar = this.setToolbar.bind(this);
+        this.toggleEditorExpand = this.toggleEditorExpand.bind(this);
     }
 
     update(field) {
@@ -45,6 +47,14 @@ class Editor extends React.Component {
     componentDidUpdate(prevProps){
         if((this.props.noteId !== prevProps.noteId)) {
             this.setState(this.props.note);
+        }
+    }
+
+    toggleEditorExpand() {
+        if(this.state.fullscreen === false){
+            this.setState({fullscreen: true})
+        }else {
+            this.setState({fullscreen: false})
         }
     }
 
@@ -77,10 +87,11 @@ class Editor extends React.Component {
         }
 
         return (
-            <div className="note-editor">
+            <div className={`note-editor ${this.state.fullscreen ? "fullscreen" : ""}`}>
                 <div className="note-editor-deletePlusdate">
                     <div className="note-editor-header-delete">
                     <div className="note-editor-notebook-header">
+                        <button className="editor-fullscreen-button" onClick={() => this.toggleEditorExpand()}> <img src={window.fullscreen} /> </button>
                         <Link to={`/notebooks/${this.props.note.notebook_id}`}>
                             <img className="notes-editor-notebook-img" src={window.notebook}/> <div className="note-editor-notebook-name">{notebookHeader}</div>
                         </Link>

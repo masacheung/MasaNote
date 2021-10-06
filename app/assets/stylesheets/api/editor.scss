@@ -93,3 +93,22 @@
     padding-bottom: 20px;
     color: #a5a5a5;
 }
+
+.note-editor.fullscreen{
+    z-index: 9999; 
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+ }
+
+ .editor-fullscreen-button > img {
+    width: 15px;
+    margin-left: -20px;
+    padding-right: 15px;
+ }
+
+ .editor-fullscreen-button:hover {
+    color: white;
+ }
