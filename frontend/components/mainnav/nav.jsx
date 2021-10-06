@@ -43,6 +43,7 @@ class Nav extends React.Component {
     }
 
     render() {
+
         return(
             <div className="main-nav">
                 <div className="main-nav-user">
