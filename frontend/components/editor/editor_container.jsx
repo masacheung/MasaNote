@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     return {
         note: note,
         notes: state.entities.notes,
-        noteId: ownProps.match.params.noteId
+        noteId: ownProps.match.params.noteId,
+        notebooks: Object.values(state.entities.notebooks)
     }
 }
 

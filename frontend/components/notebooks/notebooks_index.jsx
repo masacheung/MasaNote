@@ -86,9 +86,7 @@ export default class NotebooksIndex extends React.Component{
         }else {
             singleNotebook = "notebooks";
         }
-
-        console.log(this.props.currentUser);
-
+        
         return (
             <div className="notebooks-index">
                 <div className="notebooks-index-header">
