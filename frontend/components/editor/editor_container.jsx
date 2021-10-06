@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { fetchNotebooks } from "../../actions/notebook_actions";
 import { fetchNotes, fetchNote, updateNote, deleteNote } from "../../actions/note_actions";
 import Editor from "./editor";
 const mSTP = (state, ownProps) => {
@@ -14,6 +15,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
     return {
+        fetchNotebooks: () => dispatch(fetchNotebooks),
         fetchNotes: () => dispatch(fetchNotes()),
         fetchNote: (noteId) => dispatch(fetchNote(noteId)),
         updateNote: (note) => dispatch(updateNote(note)),

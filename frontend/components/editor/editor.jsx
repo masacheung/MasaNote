@@ -52,7 +52,7 @@ class Editor extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if((this.props.noteId !== prevProps.noteId)) {
+        if((this.props.noteId !== prevProps.noteId) || (this.props.notebookId !== prevProps.notebookId)) {
             this.setState(this.props.note);
         }
     }
@@ -71,8 +71,6 @@ class Editor extends React.Component {
     }
 
     handleMoveNote() {
-        console.log(this.state.moveNotebook);
-
         const allNotebooks = this.props.notebooks;
         let currentNotebookId;
         allNotebooks.forEach(notebook => {
