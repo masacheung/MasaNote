@@ -38,11 +38,17 @@
 .note-editor-notebook-header > a{
     display: flex;
     flex-direction: row;
+    padding: 5px 5px 5px 5px;
 }
 
 .note-editor-notebook-header > a:hover{
     background-color: #737373;
     border-radius: 3px;
+    color: white;
+}
+
+.note-editor-notebook-name {
+    margin-top: 5px;
 }
 
 .note-editor-title, .note-editor-body {
@@ -71,9 +77,10 @@
 
 .note-editor-delete {
     background-color: #8e0303;
-    color: #1a1a1a;
+    color: rgba(255, 255, 255, 0.365);
     border-radius: 3px;
     border: none;
+    padding: 5px 5px 5px 5px;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 170px;
@@ -84,13 +91,14 @@
 }
 
 .note-editor-delete:hover {
+    color: white;
     background-color: #ff6347;
 }
 
 .note-editor-date {
     padding-top: 20px;
     padding-left: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 16px;
     color: #a5a5a5;
 }
 
