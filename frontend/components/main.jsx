@@ -10,6 +10,7 @@ const Main = () => {
     return (
         <div className="main">
             <Switch>
+                <Route path="/notebooks/:notebookId" component={NavContainer}/>
                 <Route component={NavContainer}/>
             </Switch>
 

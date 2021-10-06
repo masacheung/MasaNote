@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 class Nav extends React.Component {
     constructor(props){
         super(props);
-        this.handleNewNote = this.handleNewNote.bind(this)
+        this.handleNewNote = this.handleNewNote.bind(this);
     }
 
     handleNewNote() {
         let notebookId;
 
         console.log(this.props.match.params.notebookId);
+
         if(this.props.match.params.notebookId) {
             notebookId = this.props.match.params.notebookId;
 

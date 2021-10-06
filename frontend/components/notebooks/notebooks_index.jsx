@@ -28,7 +28,7 @@ export default class NotebooksIndex extends React.Component{
     }
 
     handleDelete(notebookId){
-        if (this.state.name !== "All Note"){
+        if (this.state.name != "All Note"){
             this.props.deleteNotebook(notebookId);
         }
     }
