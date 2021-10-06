@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../util/date_util"
 import ReactQuill from 'react-quill';
-import EditorToolbar from "./editor_toolbar";
-import { format } from "./editor_toolbar";
 import Modal from 'react-modal';
 
 class Editor extends React.Component {
@@ -151,7 +149,7 @@ class Editor extends React.Component {
                     </div>
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
-                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} formats={format} onFocus={() => this.setToolbar(true)}/>
+                <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
                 
                 <Modal isOpen={this.state.modal} className="overlay">
                     <div className="my-modal-editor">
@@ -177,3 +175,30 @@ class Editor extends React.Component {
 }
 
 export default Editor;
+
+const quillModules = {
+    toolbar: [
+        [{header: "1"}, {header: "2"}, {header: [3,4,5,6]}, {font: []}],
+        [{size: []}],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [{list: "ordered"}, {list: "bullet"}],
+        ["link", "image", "video"],
+        ["clean"],
+        ["code-block"]
+    ]
+};
+
+const quillFormats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "image",
+    "video",
+    "code-block"
+];
