@@ -91,7 +91,7 @@ class Editor extends React.Component {
                 <div className="note-editor-deletePlusdate">
                     <div className="note-editor-header-delete">
                     <div className="note-editor-notebook-header">
-                        <button className="editor-fullscreen-button" onClick={() => this.toggleEditorExpand()}> <img src={window.fullscreen} /> </button>
+                        <button className="editor-fullscreen-button" onClick={() => this.toggleEditorExpand()}><img src={window.fullscreen} /></button>
                         <Link to={`/notebooks/${this.props.note.notebook_id}`}>
                             <img className="notes-editor-notebook-img" src={window.notebook}/> <div className="note-editor-notebook-name">{notebookHeader}</div>
                         </Link>

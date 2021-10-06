@@ -104,11 +104,15 @@
  }
 
  .editor-fullscreen-button > img {
-    width: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 1px 1px 1px 1px;
     margin-left: -20px;
-    padding-right: 15px;
+    margin-right: 25px;
+    padding-bottom: 5px;
  }
 
- .editor-fullscreen-button:hover {
-    color: white;
+ .editor-fullscreen-button > img:hover {
+    background: #a6a6a6;
  }
