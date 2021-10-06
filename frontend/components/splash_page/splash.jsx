@@ -20,6 +20,30 @@ const Splash = () => {
                         <button >Already have an account? Log in</button>
                     </Link>
                     </div>
+                    <div className="splash-content-body">
+                        <div className="splash-content-img">
+                            <img src={window.splash}/>
+                        </div>
+
+                        <section className="splash-content-sidebar">
+                            <div>
+                                <h4>WORK ANYWHERE</h4>
+                                <p>Keep important info handy—your notes sync automatically to MasaNote.</p>
+                            </div>
+                            <div>
+                                <h4>REMEMBER EVERYTHING</h4>
+                                <p>Make notes more useful by adding text.</p>
+                            </div>
+                            <div>
+                                <h4>GO PAPERLESS</h4>
+                                <p>Save the information—not the clutter.</p>
+                            </div>
+                            <div>
+                                <h4>OPEN TO WORK</h4>
+                                <p>More information down-below.</p>
+                            </div>
+                        </section>
+                    </div>
             </div>
             <hr/>
             <div className="splash-footer">

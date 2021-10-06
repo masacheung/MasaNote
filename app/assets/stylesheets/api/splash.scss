@@ -108,3 +108,42 @@
         }
     }
 }
+
+.splash-content-body {
+    display: flex;
+    align-items: center;
+}
+
+.splash-content-img {
+    float: left;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+.splash-content-sidebar {
+    float: right;
+    min-width: 240px
+}
+
+.splash-content-sidebar > div {
+    padding: 0 0 20px;
+}
+
+.splash-content-sidebar > div > h4 {
+    font-weight: bold;
+    font-family: "Soleil_Bold",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    line-height: 150%;
+    text-align: left;
+}
+
+.splash-content-sidebar > div > p {
+    font-size: 16px;
+    font-family: "Soleil",Helvetica,Arial,sans-serif;
+    line-height: 150%;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
