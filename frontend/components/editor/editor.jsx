@@ -4,6 +4,7 @@ import { formatDate } from "../../util/date_util"
 import ReactQuill from 'react-quill';
 import EditorToolbar from "./editor_toolbar";
 import { format } from "./editor_toolbar";
+import Modal from 'react-modal';
 
 class Editor extends React.Component {
     constructor(props){
@@ -12,12 +13,18 @@ class Editor extends React.Component {
             id: null,
             title: "",
             body: "",
+            notebook_id: null,
+            moveNotebook: "",
             updated_at: "",
-            fullscreen: false
+            fullscreen: false,
+            modal: false,
         }
         this.deleteNote = this.deleteNote.bind(this);
         this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
         this.setToolbar = this.setToolbar.bind(this);
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.handleMoveNote = this.handleMoveNote.bind(this);
         this.toggleEditorExpand = this.toggleEditorExpand.bind(this);
     }
 
@@ -50,6 +57,41 @@ class Editor extends React.Component {
         }
     }
 
+    handleOpenModal(note) {
+        this.setState({modal: true})
+
+        this.setState({
+            note: note,
+            moveNotebookId: note.notebook_id
+        })
+    }
+
+    handleCloseModal() {
+        this.setState({modal: false})
+    }
+
+    handleMoveNote() {
+        console.log(this.state.moveNotebook);
+
+        const allNotebooks = this.props.notebooks;
+        let currentNotebookId;
+        allNotebooks.forEach(notebook => {
+            if(notebook.name.toString() === this.state.moveNotebook){
+                currentNotebookId = notebook.id.toString();
+            }
+        })
+        
+        let newNote = {
+            id: this.props.note.id,
+            title: this.props.note.title,
+            body: this.props.note.body,
+            notebook_id: currentNotebookId
+        }
+
+        this.props.updateNote(newNote);
+        this.handleCloseModal();
+    }
+
     toggleEditorExpand() {
         if(this.state.fullscreen === false){
             this.setState({fullscreen: true})
@@ -72,9 +114,11 @@ class Editor extends React.Component {
 
         const allNotebooks = this.props.notebooks;
         let notebookHeader;
+        let currentNotebookId;
         allNotebooks.forEach(notebook => {
             if(notebook.id.toString() === this.props.match.params.notebookId){
                 notebookHeader = notebook.name;
+                currentNotebookId = notebook.id.toString();
             }
         })
 
@@ -82,6 +126,7 @@ class Editor extends React.Component {
             allNotebooks.forEach(notebook => {
                 if(notebook.id === this.props.note.notebook_id){
                     notebookHeader = notebook.name;
+                    currentNotebookId = this.props.note.notebook_id;
                 }
             })
         }
@@ -91,10 +136,11 @@ class Editor extends React.Component {
                 <div className="note-editor-deletePlusdate">
                     <div className="note-editor-header-delete">
                     <div className="note-editor-notebook-header">
-                        <button className="editor-fullscreen-button" onClick={() => this.toggleEditorExpand()}><img src={window.fullscreen} /></button>
+                        <button className="editor-fullscreen-button" onClick={() => this.toggleEditorExpand()}><img src={window.fullscreen}/></button>
                         <Link to={`/notebooks/${this.props.note.notebook_id}`}>
                             <img className="notes-editor-notebook-img" src={window.notebook}/> <div className="note-editor-notebook-name">{notebookHeader}</div>
                         </Link>
+                        <button className="editor-move-button" onClick={() => this.handleOpenModal(note)}><img src={window.moveimg}/></button>
                     </div>
                     <div className="note-editor-delete-container">
                         <Link to={url} className="note-editor-delete" onClick={this.deleteNote}>
@@ -108,6 +154,25 @@ class Editor extends React.Component {
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
                 <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} formats={format} onFocus={() => this.setToolbar(true)}/>
+                
+                <Modal isOpen={this.state.modal} className="overlay">
+                    <div className="my-modal-editor">
+                        <h2 className="modal-title">Move Note to...</h2>
+                        <span className="modal-name">All Notebook(s)</span>
+                        <ul>
+                            {this.props.notebooks.map((notebook, i) => 
+                                <li key={notebook.id}>{i+1}. {notebook.name}</li>)
+                            }
+                        </ul>
+                        <form>
+                            <input className="rename-notebook-input" type="text" placeholder="Notebook Name" value={this.state.moveNotebook} onChange={this.update('moveNotebook')}/>
+                        </form>
+                        <div className="create-modal-buttons">
+                            <button className="create-modal-cancel" onClick={this.handleCloseModal}>Cancel</button>
+                            <button className="create-modal-move" onClick={this.handleMoveNote}>Move</button>
+                        </div>
+                    </div>
+                </Modal>
             </div>
         )
     }
