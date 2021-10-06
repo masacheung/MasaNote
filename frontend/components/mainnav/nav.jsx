@@ -10,8 +10,6 @@ class Nav extends React.Component {
     handleNewNote() {
         let notebookId;
 
-        console.log(this.props.match.params.notebookId);
-
         if(this.props.match.params.notebookId) {
             notebookId = this.props.match.params.notebookId;
 
