@@ -18,7 +18,7 @@ class User < ApplicationRecord
         class_name: "Notebook"
 
     def create_notebook
-        notebook = Notebook.new({name: "All Note", user_id: self.id})
+        notebook = Notebook.new({name: "First Notebook", user_id: self.id})
         notebook.save
     end
 

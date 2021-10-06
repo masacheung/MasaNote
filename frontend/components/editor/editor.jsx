@@ -68,12 +68,22 @@ class Editor extends React.Component {
             }
         })
 
+        if (!notebookHeader) {
+            allNotebooks.forEach(notebook => {
+                if(notebook.id === this.props.note.notebook_id){
+                    notebookHeader = notebook.name;
+                }
+            })
+        }
+
         return (
             <div className="note-editor">
                 <div className="note-editor-deletePlusdate">
                     <div className="note-editor-header-delete">
                     <div className="note-editor-notebook-header">
-                        <img className="notes-editor-notebook-img" src={window.notebook}/> <div className="note-editor-notebook-name">{notebookHeader}</div>
+                        <Link to={`/notebooks/${this.props.note.notebook_id}`}>
+                            <img className="notes-editor-notebook-img" src={window.notebook}/> <div className="note-editor-notebook-name">{notebookHeader}</div>
+                        </Link>
                     </div>
                     <div className="note-editor-delete-container">
                         <Link to={url} className="note-editor-delete" onClick={this.deleteNote}>

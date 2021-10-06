@@ -35,6 +35,16 @@
     color: #a6a6a6;
 }
 
+.note-editor-notebook-header > a{
+    display: flex;
+    flex-direction: row;
+}
+
+.note-editor-notebook-header > a:hover{
+    background-color: #737373;
+    border-radius: 3px;
+}
+
 .note-editor-title, .note-editor-body {
     width: 100%;
     padding-left: 35px;

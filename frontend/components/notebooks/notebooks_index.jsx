@@ -114,7 +114,7 @@ export default class NotebooksIndex extends React.Component{
                             </div>
                             <div className="notebooks-index-list-created">{this.props.currentUser.username}</div>
                             <div className="notebooks-index-list-updated">{formatDateNotebook(notebook.updated_at)}</div>
-                            {i === 0 ? "" : 
+                            {i === 0 ? <div className="notebooks-index-list-actions"><button className="notebooks-index-noAction">No</button><button className="notebooks-index-noAction">Action</button></div> : 
                             <div className="notebooks-index-list-actions">
                                 <button className="rename-button" onClick={() => this.handleOpenRenameModal(notebook)}>Rename</button>
                                 <button className="delete-button" onClick={() => this.handleDelete(notebook.id)}>Delete</button>

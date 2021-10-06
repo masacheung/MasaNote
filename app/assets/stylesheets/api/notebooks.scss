@@ -115,6 +115,16 @@
                 align-items: center;
                 color: black;
 
+                .notebooks-index-noAction {
+                    border-radius: 3px;
+                    border: none;
+                    margin: 0px 5px 0px 5px;
+                    height: 25px;
+                    padding: 5px 10px 5px 12px;
+                    color: #a6a6a6;
+                    padding-right: 27px;
+                }
+
                 .rename-button {
                     background-color: #737373;
                     border-radius: 3px;
