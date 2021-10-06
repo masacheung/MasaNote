@@ -109,17 +109,18 @@ export default class NotebooksIndex extends React.Component{
                         <div className="sub-header-actions">ACTIONS</div>
                     </li>
                     {
-                        this.props.notebooks.map((notebook) => 
+                        this.props.notebooks.map((notebook, i) => 
                         <li key={notebook.id}>
                             <div className="notebooks-index-list-title">
                                 <Link to={`/notebooks/${notebook.id}`} className="link"><img src={window.notebook} className="notebooks-index-new-notebook-img" /> {notebook.name}</Link>
                             </div>
                             <div className="notebooks-index-list-created">{this.props.currentUser.username}</div>
                             <div className="notebooks-index-list-updated">{formatDateNotebook(notebook.updated_at)}</div>
+                            {i === 0 ? "" : 
                             <div className="notebooks-index-list-actions">
                                 <button className="rename-button" onClick={() => this.handleOpenRenameModal(notebook)}>Rename</button>
                                 <button className="delete-button" onClick={() => this.handleDelete(notebook.id)}>Delete</button>
-                            </div>
+                            </div>}
                         </li>)
                     }
                 </ul>
