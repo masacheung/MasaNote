@@ -39,6 +39,7 @@
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+    color: white;
   }
   .ql-editor > * {
     cursor: text;
