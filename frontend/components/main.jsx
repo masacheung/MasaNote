@@ -5,6 +5,7 @@ import NotesIndexContainer from "./notes/notes_index_container";
 import NotebooksIndexContainer from "./notebooks/notebooks_index_container";
 import EditorContainer from "./editor/editor_container";
 import NotebookShowContainer from "./notebooks/notebook_show_container";
+import TagsIndexContainer from "./tags/tags_index_container";
 
 const Main = () => {
     return (
@@ -19,6 +20,7 @@ const Main = () => {
             <Route path="/notebooks/:notebookId/:noteId" component={EditorContainer}/>
             <Route path="/notes" component={NotesIndexContainer}/>
             <Route path="/notes/:noteId" component={EditorContainer}/>
+            <Route path="/tags" component={TagsIndexContainer} />
         </div>
     )
 }
