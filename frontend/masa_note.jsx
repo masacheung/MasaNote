@@ -12,6 +12,8 @@ import * as NoteAction from "./actions/note_actions"
 import * as NotebookUtil from "./util/notebook_api_util"
 import * as NotebookAction from "./actions/notebook_actions"
 
+import * as TagApiUtil from "./actions/tag_actions";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -41,6 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.updateNotebook = NotebookAction.updateNotebook;
   window.createNotebook = NotebookAction.createNotebook;
   window.deleteNotebook = NotebookAction.deleteNotebook;
+
+  window.fetchTags = TagApiUtil.fetchTags;
+  window.fetchTag = TagApiUtil.fetchTag;
+  window.createTag = TagApiUtil.createTag;
+  window.deleteTag = TagApiUtil.deleteTag;
 
   Modal.setAppElement(document.getElementById('root'));
   const root = document.getElementById('root')
