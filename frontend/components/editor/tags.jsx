@@ -9,6 +9,8 @@ export default class Tags extends React.Component {
         }
 
         this.deleteNoteTag = this.deleteNoteTag.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateTagField = this.updateTagField.bind(this)
     }
 
     deleteNoteTag(tag_id) {
@@ -16,7 +18,11 @@ export default class Tags extends React.Component {
         this.props.deleteNoteTag({note_id, tag_id})
     }
 
-    handleSubmite(e) {
+    updateTagField(e) {
+        this.setState({tagName: e.currentTarget.value})
+    }
+
+    handleSubmit(e) {
         e.preventDefault();
 
         const user_id = this.props.user_id;
@@ -34,6 +40,20 @@ export default class Tags extends React.Component {
 
 
     render() {
-        return null;
+        return (
+            <div className="editor-tags">
+                <div>
+
+                </div>
+                <ul className="editor-tags-list">
+
+                </ul>
+                <div className="dropdown-anchor">
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" className="tag-input" value={this.state.tagName} onChange={this.updateTagField} placeholder="Add Tag"/>
+                    </form>
+                </div>
+            </div>
+        )
     }
 }

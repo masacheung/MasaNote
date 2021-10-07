@@ -3,7 +3,7 @@ import { fetchNotebooks } from "../../actions/notebook_actions";
 import { fetchNotes, fetchNote, updateNote, deleteNote } from "../../actions/note_actions";
 import { createNoteTag, deleteNoteTag, fetchNoteTags } from "../../actions/note_tag_action";
 import { fetchTags } from "../../actions/tag_actions";
-import { createTag } from "../../util/tag_api_util";
+import { createTag } from "../../actions/tag_actions";
 import Editor from "./editor";
 const mSTP = (state, ownProps) => {
     const note = state.entities.notes[ownProps.match.params.noteId];

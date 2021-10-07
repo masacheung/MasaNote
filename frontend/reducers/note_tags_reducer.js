@@ -8,7 +8,7 @@ const noteTagsReducer = (state = {}, action) => {
         case RECEIVE_NOTE_TAGS:
             return action.note_tags;
         case RECEIVE_NOTE_TAG:
-            newState[action.note.id] = action.note_tag;
+            newState[action.note_tag.id] = action.note_tag;
             return newState;
         case REMOVE_NOTE_TAG:
             delete newState[action.noteId];
