@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { formatDate } from "../../util/date_util"
 import ReactQuill from 'react-quill';
 import Modal from 'react-modal';
+import Tags from "./tags";
 
 class Editor extends React.Component {
     constructor(props){
@@ -15,7 +16,7 @@ class Editor extends React.Component {
             moveNotebook: "",
             updated_at: "",
             fullscreen: false,
-            modal: false,
+            modal: false
         }
         this.deleteNote = this.deleteNote.bind(this);
         this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
@@ -150,7 +151,8 @@ class Editor extends React.Component {
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
                 <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
-                
+                <Tags note={this.props.note} noteTags={this.props.noteTags} createTag={this.props.createTag} createNoteTag={this.props.createNoteTag} deleteNoteTag={this.props.deleteNoteTag} user_id={this.props.note.user_id}/>
+
                 <Modal isOpen={this.state.modal} className="overlay">
                     <div className="my-modal-editor">
                         <h2 className="modal-title">Move Note to...</h2>
