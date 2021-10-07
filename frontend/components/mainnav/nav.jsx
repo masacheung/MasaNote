@@ -40,6 +40,7 @@ class Nav extends React.Component {
     componentDidMount(){
         this.props.fetchNotebooks();
         this.props.fetchNotes();
+        this.props.fetchTags();
     }
 
     render() {
@@ -69,6 +70,13 @@ class Nav extends React.Component {
                         <div className="main-nav-img-note">
                             <img src={window.notebook} className="main-nav-note-img"/>
                             <Link to="/notebooks" className="main-nav-notes-title">Notebooks</Link>
+                        </div>
+                    </li>
+                    <br className="main-nav-gap"></br>
+                    <li>
+                        <div className="main-nav-img-note">
+                            <img src={window.tagimg} className="main-nav-note-img"/>
+                            <Link to="/tags" className="main-nav-notes-title">Tags</Link>
                         </div>
                     </li>
                     <br className="main-nav-gap"></br>

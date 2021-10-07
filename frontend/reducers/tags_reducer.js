@@ -2,7 +2,7 @@ import { RECEIVE_TAGS, RECEIVE_TAG, REMOVE_TAG } from "../actions/tag_actions";
 
 const tagsReducer = (state = {}, action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, action);
+    let newState = Object.assign({}, state);
 
     switch(action.type) {
         case RECEIVE_TAGS:
