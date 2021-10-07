@@ -43,7 +43,7 @@ export default class Tags extends React.Component {
         return (
             <div className="editor-tags">
                 <div>
-
+                    <img src={window.tagimg}/>
                 </div>
                 <ul className="editor-tags-list">
 
