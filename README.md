@@ -10,7 +10,7 @@
 1. [Overview](https://github.com/masacheung/MasaNote#overview)
 2. [Technologies](https://github.com/masacheung/MasaNote#technologies)
 3. [Features](https://github.com/masacheung/MasaNote#features)
-4. [In-progress & Planned]()
+4. [In-progress & Planned](https://github.com/masacheung/MasaNote#in-progress-tasks-planned-features--known-issues)
 
 ---
 
@@ -42,3 +42,7 @@ Users can create a new note using the main "New Note" button and will be immedia
 From within the MasaNote editor, users have the ability to edit notes using different headings, font styles and sizes, as well as add images, links, formulas, and code blocks.
 
 Changes to notes are autosaved. Also, the editor provide Full-Screen feature.
+
+## In-progress tasks, planned features
+
+#### Reminders
