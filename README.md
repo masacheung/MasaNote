@@ -33,10 +33,12 @@ MasaNote's rich-text editor is built with ReactQuill, a Quill component for Reac
 
 Users can create notebooks to better organize their notes. From within the `Notebooks` index, users can rename and delete notebooks via modals. User can also click the notebook to view all notes within the notebook and navigate directly to a selected note.
 
+User can also move their note to the exist nothbook.
+
 ## Rich-Text Editor
 ![alt text](https://github.com/masacheung/MasaNote/blob/main/app/assets/images/editor.gif)
 Users can create a new note using the main "New Note" button and will be immediately loaded in the editor.
 
 From within the MasaNote editor, users have the ability to edit notes using different headings, font styles and sizes, as well as add images, links, formulas, and code blocks.
 
-Changes to notes are autosaved.
+Changes to notes are autosaved. Also, the editor provide Full-Screen feature.
