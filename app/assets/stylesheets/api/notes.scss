@@ -82,9 +82,10 @@
 }
 
 .note-item-body {
-    padding-top: 10px;
+    display: flex;
+    margin-top: 10px;
     font-size: 15px;
-    color: #737373
+    color: #737373;
 }
 
 .notes-index > a{
@@ -130,5 +131,6 @@
 .note-item-datetime {
     color: #737373;
     font: inherit;
-    padding-top: 25px;
+    position: absolute;
+    bottom: 7px;
 }
