@@ -4,6 +4,8 @@
 
 <a href="https://masanote.herokuapp.com/">Try MasaNote </a> via the live demo login.
 
+***
+
 Table of Contents
 1. Overview
 2. Technologies
