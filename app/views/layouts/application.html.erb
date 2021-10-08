@@ -5,6 +5,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag asset_path('logo.png') %>
+    <meta property="og:title" content="MasaNote" />
+    <meta property="og:image" name="image" content="https://github.com/masacheung/MasaNote/blob/main/app/assets/images/home_page.png" />
+    <meta property="og:ulr" content="https://masanote.herokuapp.com/#/" />
+    <meta property="og:description" content="MasaNote is a single-page note-taking app that features a rich-text editor, image uploading, autosaving, organization with notebooks. MasaNote is an Evernote clone, a popular note taking web app." />
+
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
