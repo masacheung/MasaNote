@@ -32,7 +32,6 @@ export default class Tags extends React.Component {
         this.props.createTag({name, user_id})
             .then((res) => {
                 const tag_id = res.tag.id;
-                console.log(tag_id);
                 this.props.createNoteTag({note_id, tag_id});
             }
         )
