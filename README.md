@@ -12,6 +12,8 @@ Table of Contents
 3. Features
 4. In-progress & Planned
 
+***
+
 # Overview
 <a href="https://masanote.herokuapp.com/">MasaNote</a> is a single-page note-taking app that features a rich-text editor, image uploading, autosaving, organization with notebooks. <a href="https://masanote.herokuapp.com/">MasaNote</a> is an <a href="https://evernote.com/">Evernote</a> clone, a popular note taking web app.
 
