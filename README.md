@@ -1,5 +1,5 @@
 # MasaNote
-![alt text]
+![alt text](https://github.com/masacheung/MasaNote/blob/main/app/assets/images/home_page.png)
 ## Demo
 
 <a href="https://masanote.herokuapp.com/">Try MasaNote </a> via the live demo login.
