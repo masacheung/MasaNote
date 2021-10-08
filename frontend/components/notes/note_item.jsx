@@ -28,6 +28,8 @@ const NoteItem = props => {
         }else if (dateNow.getHours() === updateDate.getHours()){
             let temp = dateNow.getMinutes() - updateDate.getMinutes();
             displayDate = `${temp} minutes ago`;
+        }else {
+            displayDate = formatDateTime(date);
         }
     }else {
         displayDate = formatDateTime(date);
