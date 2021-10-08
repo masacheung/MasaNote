@@ -1,5 +1,5 @@
 # MasaNote
-
+![alt text]
 ## Demo
 
 <a href="https://masanote.herokuapp.com/">Try MasaNote </a> via the live demo login.
