@@ -13,8 +13,8 @@ const mSTP = (state, ownProps) => {
         notes: state.entities.notes,
         noteId: ownProps.match.params.noteId,
         notebooks: Object.values(state.entities.notebooks),
-        tags: state.entities.tags,
-        noteTags: state.entities.note_tags
+        tags: Object.values(state.entities.tags),
+        noteTags: Object.values(state.entities.note_tags)
     }
 }
 

@@ -10,7 +10,7 @@ export default class Tags extends React.Component {
 
         this.deleteNoteTag = this.deleteNoteTag.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.updateTagField = this.updateTagField.bind(this)
+        this.updateTagField = this.updateTagField.bind(this);
     }
 
     deleteNoteTag(tag_id) {
@@ -32,21 +32,45 @@ export default class Tags extends React.Component {
         this.props.createTag({name, user_id})
             .then((res) => {
                 const tag_id = res.tag.id;
+                console.log(tag_id);
                 this.props.createNoteTag({note_id, tag_id});
             }
         )
         
     }
 
+    componentDidMount(){
+        this.props.fetchNotes();
+    }
+
 
     render() {
+        // const {note} = this.props;
+        // if (!note){
+        //     return null;
+        // }
+
+        // const noteTags = Object.values(this.props.noteTags);
+
+        // const tagsList = noteTags.map(tag => {
+        //     if (!tag) {
+        //         return null;
+        //     }else if (tag.note_id === note.id){
+        //         return (
+        //             <li className="tags-list-item" key={tag.id}>
+        //                 {tag.name}
+        //             </li>
+        //         )
+        //     }
+        // })
+
         return (
             <div className="editor-tags">
                 <div>
                     <img src={window.tagimg}/>
                 </div>
                 <ul className="editor-tags-list">
-
+                    {/* {tagsList} */}
                 </ul>
                 <div className="dropdown-anchor">
                     <form onSubmit={this.handleSubmit}>

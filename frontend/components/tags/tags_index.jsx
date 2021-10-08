@@ -84,8 +84,6 @@ export default class TagsIndex extends React.Component {
             singleTag = "tags";
         }
 
-        console.log(this.props.tags);
-
         return (
             <div className="notebooks-index">
                 <div className="notebooks-index-header">

@@ -48,6 +48,7 @@ class Editor extends React.Component {
     componentDidMount(){
         this.props.fetchNotes()
             .then((res) => {this.setState(this.props.note)});
+        this.props.fetchNoteTags();
     }
 
     componentDidUpdate(prevProps){
@@ -151,7 +152,7 @@ class Editor extends React.Component {
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
                 <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
-                <Tags note={this.props.note} noteTags={this.props.noteTags} createTag={this.props.createTag} createNoteTag={this.props.createNoteTag} deleteNoteTag={this.props.deleteNoteTag} user_id={this.props.note.user_id}/>
+                <Tags note={this.props.note} noteTags={this.props.noteTags} fetchNotes={this.props.fetchNotes} createTag={this.props.createTag} createNoteTag={this.props.createNoteTag} deleteNoteTag={this.props.deleteNoteTag} user_id={this.props.note.user_id}/>
 
                 <Modal isOpen={this.state.modal} className="overlay">
                     <div className="my-modal-editor">
