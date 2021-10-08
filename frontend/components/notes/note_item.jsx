@@ -20,6 +20,7 @@ const NoteItem = props => {
     const dateNow = new Date();
     const updateDate = new Date(date);
     let displayDate;
+
     if((dateNow.getDate() === updateDate.getDate()) && (dateNow.getMonth() === updateDate.getMonth())){
         if (dateNow.getMinutes() === updateDate.getMinutes()){
             displayDate = "a few second ago";
@@ -29,28 +30,11 @@ const NoteItem = props => {
             let temp = dateNow.getMinutes() - updateDate.getMinutes();
             displayDate = `${temp} minutes ago`;
         }else {
-            let temp = dataNow.getHours() - updateDate.getHours();
-            displayDate = `${temp} hours ago`;
+            displayDate = formatDateTime(date);
         }
-    }else if((dateNow.getDate() - updateDate.getDate() === 1) && (dateNow.getMonth() === updateDate.getMonth())){
-        displayDate = "Yesterday"
     }else {
         displayDate = formatDateTime(date);
     }
-    // if((dateNow.getDate() === updateDate.getDate()) && (dateNow.getMonth() === updateDate.getMonth())){
-    //     if (dateNow.getMinutes() === updateDate.getMinutes()){
-    //         displayDate = "a few second ago";
-    //     }else if (dateNow.getMinutes() - updateDate.getMinutes() < 10){
-    //         displayDate = "a few minutes ago";
-    //     }else if (dateNow.getHours() === updateDate.getHours()){
-    //         let temp = dateNow.getMinutes() - updateDate.getMinutes();
-    //         displayDate = `${temp} minutes ago`;
-    //     }else {
-    //         displayDate = formatDateTime(date);
-    //     }
-    // }else {
-    //     displayDate = formatDateTime(date);
-    // }
 
     const body = props.note.body.slice(0,100).replace(/<[^>]*>?/gm, '');
 
