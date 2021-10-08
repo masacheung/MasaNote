@@ -1,0 +1,35 @@
+.notfoundimg {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 30%;
+    left: 40%;
+    position: absolute;
+}
+
+.notfound > a{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 50%;
+    right: 3%;
+    position: absolute;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.notfound > a:hover {
+    color: #737373;
+}

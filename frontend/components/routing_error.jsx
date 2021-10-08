@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const RoutingError = props => {
     return (
-        <h1>404 Error: Page not Found!</h1>
+        <div className="notfound">
+            <img src={window.notfoundimg} className="notfoundimg"/>
+            <Link to="/">Back To MasaNote!!!</Link>
+        </div>
     )
 }
 
