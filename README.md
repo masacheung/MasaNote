@@ -10,7 +10,7 @@
 1. [Overview](https://github.com/masacheung/MasaNote#overview)
 2. [Technologies](https://github.com/masacheung/MasaNote#technologies)
 3. [Features](https://github.com/masacheung/MasaNote#features)
-4. [In-progress & Planned](https://github.com/masacheung/MasaNote#in-progress-tasks-planned-features--known-issues)
+4. [In-progress & Planned](https://github.com/masacheung/MasaNote#in-progress-tasks-planned-features)
 
 ---
 
