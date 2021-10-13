@@ -77,6 +77,9 @@ const Splash = () => {
                     <h3>More Projects</h3>
                         <ul>
                             <li>
+                                <a href="https://triolingo-mern.herokuapp.com/#/">Triolingo</a>
+                            </li>
+                            <li>
                                 <a href="https://masacheung.github.io/dropping_down/">Dropping Down</a>
                             </li>
                         </ul>
