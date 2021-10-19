@@ -1,10 +1,10 @@
 class Api::TagsController < ApplicationController
+    before_action :require_logged_in, only: [:create, :index, :update, :destroy, :show]
+
 
     def index
-        if(current_user)
-            @tags = current_user.tags
-            render :index
-        end
+        @tags = current_user.tags
+        render :index
     end
 
     def show

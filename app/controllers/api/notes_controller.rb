@@ -1,4 +1,6 @@
 class Api::NotesController < ApplicationController
+    before_action :require_logged_in, only: [:create, :index, :update, :destroy, :show]
+
 
     def index
         if(current_user)

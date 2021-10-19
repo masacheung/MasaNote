@@ -53,6 +53,7 @@ const NoteItem = props => {
         </li>
         </Link>
     )
+
 }
 
 export default NoteItem;
