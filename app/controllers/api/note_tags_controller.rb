@@ -1,5 +1,4 @@
 class Api::NoteTagsController < ApplicationController
-    before_action :require_logged_in, only: [:create, :index, :update, :destroy, :show]
 
     def index
         @note_tags = NoteTag.all

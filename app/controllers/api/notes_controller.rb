@@ -1,9 +1,12 @@
 class Api::NotesController < ApplicationController
-    before_action :require_logged_in, only: [:create, :index]
 
     def index
-        @notes = @current_user.notes
-        render :index
+        if(current_user)
+            @notes = current_user.notes
+            render :index
+        else 
+            render json: {msg: "LOGOUT"}
+        end
     end
 
     def show
