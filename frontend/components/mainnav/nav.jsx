@@ -94,6 +94,9 @@ class Nav extends React.Component {
                     <a href="https://github.com/masacheung">
                         <img src={window.github} className="social-img"/>
                     </a>
+                    <a href="https://angel.co/u/man-tat-masa-cheung">
+                        <img src={window.ang} className="social-img"/>
+                    </a>
                 </div>
             </div>
         )
