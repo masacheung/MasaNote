@@ -71,6 +71,9 @@ const Splash = () => {
                         <li>
                             <a href="https://angel.co/u/man-tat-masa-cheung">AngelList</a>
                         </li>
+                        <li>
+                            <a href="https://masacheung.github.io/portfolio/">Portfolio</a>
+                        </li>
                     </ul>
                 </div>
                 <div className="splash-info">
