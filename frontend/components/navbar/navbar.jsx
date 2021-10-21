@@ -20,6 +20,9 @@ const Navbar = () => {
                     <li>
                         <a href="https://angel.co/u/man-tat-masa-cheung">AngelList</a>
                     </li>
+                    <li>
+                        <a href="https://masacheung.github.io/portfolio/">Portfolio</a>
+                    </li>
                 </ul>
                 <NavBarSessionContainer />
             </div>
