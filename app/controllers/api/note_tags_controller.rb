@@ -1,15 +1,15 @@
 class Api::NoteTagsController < ApplicationController
     before_action :require_logged_in, only: [:create, :index, :update, :destroy, :show]
 
-    def index
-        @note_tags = NoteTag.all
-        render :index
-    end
+    # def index
+    #     @note_tags = NoteTag.all
+    #     render :index
+    # end
 
-    def show
-        @note_tag = NoteTag.find_by(id: params[:id])
-        render :show
-    end
+    # def show
+    #     @note_tag = NoteTag.find_by(id: params[:id])
+    #     render :show
+    # end
 
     def create
         @note_tag = NoteTag.new(note_tag_params)
