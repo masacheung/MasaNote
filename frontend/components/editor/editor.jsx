@@ -41,7 +41,8 @@ class Editor extends React.Component {
         this.props.createTag({name, user_id})
             .then((res) => {
                 const tag_id = res.tag.id;
-                this.props.createNoteTag({note_id, tag_id});
+                this.props.createNoteTag({note_id, tag_id})
+                    .then((res) => this.props.fetchNote(this.props.note.id))
             }
         )        
     }
@@ -69,13 +70,15 @@ class Editor extends React.Component {
     }
 
     componentDidMount(){
+        this.props.fetchTags();
+        this.props.fetchNoteTags();
         this.props.fetchNotes()
             .then((res) => {this.setState(this.props.note)});
-        this.props.fetchNoteTags();
     }
 
     componentDidUpdate(prevProps){
         if((this.props.noteId !== prevProps.noteId) || (this.props.notebookId !== prevProps.notebookId)) {
+            this.props.fetchTags();
             this.setState(this.props.note);
         }
     }
@@ -132,7 +135,7 @@ class Editor extends React.Component {
         }else {
             url = "/notes"
         }
-        console.log(this.props.tags);
+        console.log(this.props.note.tags);
 
         const allNotebooks = this.props.notebooks;
         let notebookHeader;
@@ -152,6 +155,18 @@ class Editor extends React.Component {
                 }
             })
         }
+
+        const tagsList = this.props.note.tags.map(tag => {
+            if (!tag) {
+                return null;
+            }else if (tag.note_id === note.id){
+                return (
+                    <li className="tags-list-item" key={tag.id}>
+                        {tag.name}
+                    </li>
+                )
+            }
+        })
 
         return (
             <div className={`note-editor ${this.state.fullscreen ? "fullscreen" : ""}`}>
@@ -182,7 +197,7 @@ class Editor extends React.Component {
                         <img src={window.tagimg}/>
                     </div>
                     <ul className="editor-tags-list">
-                        {/* {tagsList} */}
+                        {tagsList}
                     </ul>
                     <div className="dropdown-anchor">
                         <form onSubmit={this.handleSubmit}>

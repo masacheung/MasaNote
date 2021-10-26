@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
         noteId: ownProps.match.params.noteId,
         notebooks: Object.values(state.entities.notebooks),
         tags: Object.values(state.entities.tags),
-        noteTags: Object.values(state.entities.note_tags)
+        noteTags: state.entities.note_tags
     }
 }
 

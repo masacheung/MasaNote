@@ -9,8 +9,8 @@ import { fetchTags } from '../../actions/tag_actions';
 const mSTP = ({ session, entities: {users, notebooks, notes}}, ownProps) => {
     return {
         currentUser: users[session.id],
-        // notebooks: Object.values(notebooks),
-        // notes: Object.values(notes),
+        notebooks: Object.values(notebooks),
+        notes: Object.values(notes),
     }
 }
 
