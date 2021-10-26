@@ -177,9 +177,11 @@ class Editor extends React.Component {
                 return null;
             }else if (tag.note_id === note.id){
                 return (
+                    <Link to={`/tags/${tag.id}`}>
                     <li className="tags-list-item" key={tag.id}>
-                        {tag.name}
+                       {tag.name}
                     </li>
+                    </Link>
                 )
             }
         })
