@@ -135,7 +135,6 @@ class Editor extends React.Component {
         }else {
             url = "/notes"
         }
-        console.log(this.props.note.tags);
 
         const allNotebooks = this.props.notebooks;
         let notebookHeader;

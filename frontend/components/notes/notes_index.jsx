@@ -3,7 +3,6 @@ import NotesList from './notes_list';
 
 export default class NotesIndex extends React.Component {
     constructor(props){
-        // console.log(props);
         super(props);
     }
 
