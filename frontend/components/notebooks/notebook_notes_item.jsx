@@ -35,7 +35,7 @@ const NotebookNotesItem = props => {
         displayDate = formatDateTime(date);
     }
 
-    const body = props.note.body.slice(0,150).replace(/<[^>]*>?/gm, '');
+    const body = props.note.body.slice(0,100).replace(/<[^>]*>?/gm, '');
 
     return (
         <Link to={url}>
