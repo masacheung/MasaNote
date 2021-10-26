@@ -40,6 +40,7 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     color: white;
+    max-height: 70vh;
   }
   .ql-editor > * {
     cursor: text;

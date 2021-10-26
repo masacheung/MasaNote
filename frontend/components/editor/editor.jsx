@@ -16,7 +16,8 @@ class Editor extends React.Component {
             moveNotebook: "",
             updated_at: "",
             fullscreen: false,
-            modal: false
+            modal: false,
+            tagName: ""
         }
         this.deleteNote = this.deleteNote.bind(this);
         this.handleQuillUpdate = this.handleQuillUpdate.bind(this);
@@ -25,6 +26,28 @@ class Editor extends React.Component {
         this.handleCloseModal = this.handleCloseModal.bind(this);
         this.handleMoveNote = this.handleMoveNote.bind(this);
         this.toggleEditorExpand = this.toggleEditorExpand.bind(this);
+        this.updateTagField = this.updateTagField.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        const user_id = this.props.note.user_id;
+        const name = this.state.tagName;
+        const note_id = this.props.note.id;
+
+        this.props.createTag({name, user_id})
+            .then((res) => {
+                const tag_id = res.tag.id;
+                this.props.createNoteTag({note_id, tag_id});
+            }
+        )        
+    }
+
+    updateTagField(e) {
+        this.setState({tagName: e.currentTarget.value})
     }
 
     update(field) {
@@ -109,6 +132,7 @@ class Editor extends React.Component {
         }else {
             url = "/notes"
         }
+        console.log(this.props.tags);
 
         const allNotebooks = this.props.notebooks;
         let notebookHeader;
@@ -152,8 +176,20 @@ class Editor extends React.Component {
                 </div>
                 <input className="note-editor-title" type="text" placeholder="Title" value={this.state.title} onChange={this.update("title")} onFocus={() => this.setToolbar(false)}/>
                 <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
-                <Tags note={this.props.note} noteTags={this.props.noteTags} fetchNotes={this.props.fetchNotes} createTag={this.props.createTag} createNoteTag={this.props.createNoteTag} deleteNoteTag={this.props.deleteNoteTag} user_id={this.props.note.user_id}/>
-
+                {/* <Tags note={this.props.note} noteTags={this.props.noteTags} fetchNotes={this.props.fetchNotes} createTag={this.props.createTag} createNoteTag={this.props.createNoteTag} deleteNoteTag={this.props.deleteNoteTag} user_id={this.props.note.user_id}/> */}
+                <div className="editor-tags">
+                    <div>
+                        <img src={window.tagimg}/>
+                    </div>
+                    <ul className="editor-tags-list">
+                        {/* {tagsList} */}
+                    </ul>
+                    <div className="dropdown-anchor">
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" className="tag-input" value={this.state.tagName} onChange={this.updateTagField} placeholder="Add Tag"/>
+                        </form>
+                    </div>
+                </div>
                 <Modal isOpen={this.state.modal} className="overlay">
                     <div className="my-modal-editor">
                         <h2 className="modal-title">Move Note to...</h2>
