@@ -84,6 +84,25 @@ export default class TagsIndex extends React.Component {
             singleTag = "tags";
         }
 
+        let tag;
+        if(this.props.tags){
+            tag = this.props.tags.map(tag => 
+                <li key={tag.id}>
+                    <div className="notebooks-index-list-title">
+                        <Link to={`/tags/${tag.id}`} className="link"><img src={window.tagimg} className="notebooks-index-new-notebook-img" /> {tag.name}</Link>
+                    </div>
+                    <div className="notebooks-index-list-created">{this.props.currentUser.username}</div>
+                    <div className="notebooks-index-list-updated">{formatDateNotebook(tag.updated_at)}</div>
+                    <div className="notebooks-index-list-actions">
+                        <button className="rename-button" onClick={() => this.handleOpenRenameModal(tag)}>Rename</button>
+                        <button className="delete-button" onClick={() => this.handleDelete(tag.id)}>Delete</button>
+                    </div>
+                </li>
+                )
+        }else {
+            tag = '';
+        }
+
         return (
             <div className="notebooks-index">
                 <div className="notebooks-index-header">
@@ -102,7 +121,7 @@ export default class TagsIndex extends React.Component {
                         <div className="sub-header-updated">UPDATED</div>
                         <div className="sub-header-actions">ACTIONS</div>
                     </li>
-                    {this.props.tags.map(tag => 
+                    {/* {this.props.tags.map(tag => 
                         <li key={tag.id}>
                             <div className="notebooks-index-list-title">
                                 <Link to={`/tags/${tag.id}`} className="link"><img src={window.tagimg} className="notebooks-index-new-notebook-img" /> {tag.name}</Link>
@@ -115,7 +134,8 @@ export default class TagsIndex extends React.Component {
                             </div>
                         </li>
                         )
-                    }
+                    } */}
+                    {tag}
                 </ul>
                 <Modal isOpen={this.state.modal} className="overlay">
                     <div className="my-modal">

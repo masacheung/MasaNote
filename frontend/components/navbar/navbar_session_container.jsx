@@ -14,4 +14,4 @@ const mDTP = dispatch => {
     }
 }
 
-export default connect(mSTP, mDTP)(NavBarSession)
+export default connect(null, mDTP)(NavBarSession)

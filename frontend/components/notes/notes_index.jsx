@@ -21,6 +21,13 @@ export default class NotesIndex extends React.Component {
             singleNote = "notes";
         }
 
+        let note;
+        if (this.props.notes){
+            note = <NotesList notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+        }else {
+            note = '';
+        }
+
         return (
             <div className="notes-index">
                 <div className="notes-index-header">
@@ -30,7 +37,8 @@ export default class NotesIndex extends React.Component {
                     <div className="notes-index-count">{this.props.notes.length} {singleNote}</div>
                 </div>
                 <div className="notes-index-content">
-                    <NotesList notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+                    {/* <NotesList notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/> */}
+                    {note}
                 </div>
             </div>
         )

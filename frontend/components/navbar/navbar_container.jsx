@@ -12,4 +12,4 @@ const mDTP = dispatch => ({
     logout: () => dispatch(logoutUser())
 })
 
-export default connect(mSTP, mDTP)(NavBar);
+export default connect(null, mDTP)(NavBar);

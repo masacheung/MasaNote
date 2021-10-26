@@ -36,7 +36,12 @@ const NoteItem = props => {
         displayDate = formatDateTime(date);
     }
 
-    const body = props.note.body.slice(0,100).replace(/<[^>]*>?/gm, '');
+    let body;
+    if(props.note.body){
+        body = props.note.body.slice(0,100).replace(/<[^>]*>?/gm, '');
+    }else {
+        body = '';
+    }
 
     return (
         <Link to={url}>

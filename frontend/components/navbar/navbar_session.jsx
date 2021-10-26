@@ -15,7 +15,8 @@ const NavBarSession = ({ currentUser, logout }) => {
         </nav>
     };
 
-    return currentUser ? greetingOrLogout() : loginButton();
+    // return currentUser ? greetingOrLogout() : loginButton();
+    return loginButton();
 }
 
 export default NavBarSession;
