@@ -12,7 +12,7 @@ class Api::NotesController < ApplicationController
     end
 
     def show
-        @note = Note.find_by(id: params[:note][:id])
+        @note = Note.find_by(id: params[:id])
         render :show
     end
 
