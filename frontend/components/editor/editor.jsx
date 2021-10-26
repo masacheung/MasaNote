@@ -37,14 +37,31 @@ class Editor extends React.Component {
         const user_id = this.props.note.user_id;
         const name = this.state.tagName;
         const note_id = this.props.note.id;
+        this.setState({tagName: ""});
 
-        this.props.createTag({name, user_id})
+        let tag = this.props.tags.find((tag) => {
+            return tag.name === name;
+        })
+
+        if(tag) {
+            const tag_id = tag.id;
+            this.props.createNoteTag({note_id, tag_id})
             .then((res) => {
-                const tag_id = res.tag.id;
-                this.props.createNoteTag({note_id, tag_id})
-                    .then((res) => this.props.fetchNote(this.props.note.id))
-            }
-        )        
+                this.props.fetchNote(this.props.note.id)
+                this.props.fetchNoteTags();
+            })
+        }else {
+            this.props.createTag({name, user_id})
+                .then((res) => {
+                    const tag_id = res.tag.id;
+                    this.props.createNoteTag({note_id, tag_id})
+                        .then((res) => {
+                            this.props.fetchNote(this.props.note.id)
+                            this.props.fetchNoteTags();
+                        })
+                }
+            )
+        }
     }
 
     updateTagField(e) {
