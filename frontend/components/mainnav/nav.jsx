@@ -88,13 +88,13 @@ class Nav extends React.Component {
                     </li>
                 </ul>
                 <div className="social">
-                    <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/">
+                    <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/" target="_blank" rel="noreferrer noopener">
                         <img src={window.linkedIn} className="social-img"/>
                     </a>
-                    <a href="https://github.com/masacheung">
+                    <a href="https://github.com/masacheung" target="_blank" rel="noreferrer noopener">
                         <img src={window.github} className="social-img"/>
                     </a>
-                    <a href="https://angel.co/u/man-tat-masa-cheung">
+                    <a href="https://angel.co/u/man-tat-masa-cheung" target="_blank" rel="noreferrer noopener">
                         <img src={window.ang} className="social-img"/>
                     </a>
                 </div>

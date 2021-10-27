@@ -56,7 +56,7 @@ const Splash = () => {
                             Man Tat Masa Cheung
                         </li>
                         <li>
-                            <a href="https://masacheung.github.io/portfolio/">Portfolio</a>
+                            <a href="https://masacheung.github.io/portfolio/" target="_blank" rel="noreferrer noopener">Portfolio</a>
                         </li>
                     </ul>
                 </div>
@@ -66,13 +66,13 @@ const Splash = () => {
                     </h3>
                     <ul>
                         <li>
-                            <a href="https://github.com/masacheung">Github</a>
+                            <a href="https://github.com/masacheung" target="_blank" rel="noreferrer noopener">Github</a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
                         </li>
                         <li>
-                            <a href="https://angel.co/u/man-tat-masa-cheung">AngelList</a>
+                            <a href="https://angel.co/u/man-tat-masa-cheung" target="_blank" rel="noreferrer noopener">AngelList</a>
                         </li>
                     </ul>
                 </div>
@@ -80,10 +80,10 @@ const Splash = () => {
                     <h3>More Projects</h3>
                         <ul>
                             <li>
-                                <a href="https://triolingo-mern.herokuapp.com/#/">Triolingo</a>
+                                <a href="https://triolingo-mern.herokuapp.com/#/" target="_blank" rel="noreferrer noopener">Triolingo</a>
                             </li>
                             <li>
-                                <a href="https://masacheung.github.io/dropping_down/">Dropping Down</a>
+                                <a href="https://masacheung.github.io/dropping_down/" target="_blank" rel="noreferrer noopener">Dropping Down</a>
                             </li>
                         </ul>
                 </div>
