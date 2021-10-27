@@ -22,7 +22,7 @@ export default class NotesIndex extends React.Component {
 
         let note;
         if (this.props.notes){
-            note = <NotesList notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+            note = <NotesList notebooks={this.props.notebooks} notes={this.props.notes} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
         }else {
             note = '';
         }

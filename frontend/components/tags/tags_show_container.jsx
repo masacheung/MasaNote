@@ -12,7 +12,8 @@ const mSTP = (state, ownProps) => {
         notes: state.entities.notes,
         tags: state.entities.tags,
         currentUser: state.entities.users[state.session.id],
-        noteTags: state.entities.note_tags
+        noteTags: state.entities.note_tags,
+        notebooks: Object.values(state.entities.notebooks)
     }
 }
 

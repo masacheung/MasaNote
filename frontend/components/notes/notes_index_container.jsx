@@ -10,7 +10,8 @@ import NotesIndex from "./notes_index"
 const mSTP = (state) => {
     return {
         notes: Object.values(state.entities.notes),
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        notebooks: Object.values(state.entities.notebooks)
     }
 }
 

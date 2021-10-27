@@ -13,7 +13,7 @@ class NotesList extends React.Component {
     }
 
     handleNewNote() {
-        let notebookId = 1;
+        let notebookId = this.props.notebooks[0].id;
 
         let newNote = {
             title: "",

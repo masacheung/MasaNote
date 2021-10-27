@@ -53,7 +53,7 @@ export default class TagsShow extends React.Component {
                     <div className="notes-index-count">{tagsNote.length} {singleTag}</div>
                 </div>
                 <div className="notes-index-content">
-                    <TagsNotesList notes={tagsNote} tagId={this.props.match.params.tagId} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
+                    <TagsNotesList notebooks={this.props.notebooks} notes={tagsNote} tagId={this.props.match.params.tagId} history={this.props.history} currentUser={this.props.currentUser} createNote={this.props.createNote} fetchNotes={this.props.fetchNotes}/>
                 </div>
             </div>
         );

@@ -16,11 +16,11 @@ class TagsNotesList extends React.Component {
             title: "",
             body: "",
             user_id: this.props.currentUser.id,
-            notebook_id: this.props.notebookId
+            notebook_id: this.props.notebooks[0].id
         }
 
         this.props.createNote(newNote)
-            .then((res) => this.props.history.push(`/notebooks/${this.props.notebookId}/${res.note.id}`))
+            .then((res) => this.props.history.push(`/notes/${res.note.id}`))
     }
 
     render() {
@@ -59,7 +59,7 @@ class TagsNotesList extends React.Component {
 
         return(
             <ul>
-                {notes.map(note => <TagsNotesItem note={note} key={note.id} tagId={this.props.tagId}/>)}
+                {notes.map(note => <TagsNotesItem notebooks={this.props.notebooks} note={note} key={note.id} tagId={this.props.tagId}/>)}
             </ul>
         )
     }
