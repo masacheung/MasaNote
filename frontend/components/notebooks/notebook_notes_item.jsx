@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import { formatDateTime } from '../../util/date_util';
 
 const NotebookNotesItem = props => {
+    if (!props.note) {
+        return null;
+    }
+
     let url = `/notebooks/${props.notebookId}/${props.note.id}`
     let title;
     if (props.note.title === "") {
         title = "Untitled";
     }else {
-        title = props.note.title.slice(0,25);
+        title = props.note.title.slice(0,20)
     }
 
-    if (!props.note) {
-        return null;
-    }
 
     let date = props.note.updated_at;
 
