@@ -47,6 +47,42 @@ From within the MasaNote editor, users have the ability to edit notes using diff
 
 Changes to notes are autosaved. Also, the editor provide Full-Screen feature.
 
+```Javascript
+
+    <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
+
+
+const quillModules = {
+    toolbar: [
+        [{header: "1"}, {header: "2"}, {header: [3,4,5,6]}, {font: []}],
+        [{size: []}],
+        ["bold", "italic", "underline", "strike", "blockquote"],
+        [{list: "ordered"}, {list: "bullet"}],
+        ["link", "image", "video"],
+        ["clean"],
+        ["code-block"]
+    ]
+};
+
+const quillFormats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "image",
+    "video",
+    "code-block"
+];
+
+```
+
+---
+
 ### Notes
 
 Notes are a table in the database with columns for title, body, notebook_id, and author_id.
