@@ -47,6 +47,37 @@ From within the MasaNote editor, users have the ability to edit notes using diff
 
 Changes to notes are autosaved. Also, the editor provide Full-Screen feature.
 
+### Notes
+
+Notes are a table in the database with columns for title, body, notebook_id, and author_id.
+
+Users are able to create, view, update, and delete notes.
+
+Users see their notes after logging in and clicking Notes on the left sidebar. This will then display a notes list where the user can pick a note to view.
+
+A challenging aspect of implementing the notes feature was creating a way to edit them. This was done by implementing a rich text editor library called React-Quill, and synchronizing the value of that component with the state of its container component. Then the database was updated based on the state change.
+
+```Javascript
+
+class NotesList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render{
+        const notes = notes.map((note, idx )=> [note.updated_at, idx]);
+        notes.sort().reverse();
+
+        return(
+            <ul>
+                {notes.map(note => <NoteItem note={note} key={note.id} />)}
+            </ul>
+        )
+    }
+}
+
+```
+
 ## In-progress tasks, planned features
 
 #### Reminders
