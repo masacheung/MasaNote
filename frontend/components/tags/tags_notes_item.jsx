@@ -8,7 +8,7 @@ const TagsNotesItem = props => {
     if (props.note.title === "") {
         title = "Untitled";
     }else {
-        title = props.note.title.slice(0,10);
+        title = props.note.title.slice(0,25);
     }
 
     if (!props.note) {
