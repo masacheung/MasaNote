@@ -47,9 +47,13 @@ From within the MasaNote editor, users have the ability to edit notes using diff
 
 Changes to notes are autosaved. Also, the editor provide Full-Screen feature.
 
+### React Quill Editor
+
 ```Javascript
 
-    <ReactQuill theme="snow" placeholder="Start writing" value={this.state.body} onChange={this.handleQuillUpdate} modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
+    <ReactQuill theme="snow" placeholder="Start writing" 
+                value={this.state.body} onChange={this.handleQuillUpdate} 
+                modules={quillModules} formats={quillFormats} onFocus={() => this.setToolbar(true)}/>
 
 
 const quillModules = {
