@@ -89,13 +89,15 @@ const quillFormats = [
 
 ### Notes
 
-Notes are a table in the database with columns for title, body, notebook_id, and author_id.
+Notes are a table in the database with columns for title, body, notebook_id, and user_id.
 
 Users are able to create, view, update, and delete notes.
 
 Users see their notes after logging in and clicking Notes on the left sidebar. This will then display a notes list where the user can pick a note to view.
 
 A challenging aspect of implementing the notes feature was creating a way to edit them. This was done by implementing a rich text editor library called React-Quill, and synchronizing the value of that component with the state of its container component. Then the database was updated based on the state change.
+
+### Notes sort by update time
 
 ```Javascript
 
