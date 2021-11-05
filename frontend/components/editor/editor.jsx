@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { formatDate } from "../../util/date_util"
 import ReactQuill from 'react-quill';
 import Modal from 'react-modal';
-import Tags from "./tags";
+
 
 class Editor extends React.Component {
     constructor(props){
