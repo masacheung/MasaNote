@@ -97,7 +97,6 @@ Users see their notes after logging in and clicking Notes on the left sidebar. T
 
 A challenging aspect of implementing the notes feature was creating a way to edit them. This was done by implementing a rich text editor library called React-Quill, and synchronizing the value of that component with the state of its container component. Then the database was updated based on the state change.
 
-
 ### Notes sort by update time
 
 ```Javascript
